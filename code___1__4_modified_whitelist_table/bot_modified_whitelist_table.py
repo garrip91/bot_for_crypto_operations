@@ -15,7 +15,11 @@ from collections import defaultdict
 import traceback
 import functools
 
-from src import secrets
+from dotenv import load_dotenv
+import os
+
+
+load_dotenv()
 
 #==========================================================================================================================
 #======================================================= INITIALIZATION ====================================================
@@ -36,13 +40,13 @@ exchange = ccxt.binance({
 prices = {}  # Dictionary to store the latest prices for multiple pairs
 prices_cooldown = {}  # Dictionary to manage cooldown states for each trading pair
 
-PRICE_TELEGRAM_TOKEN = secrets.PRICE_TELEGRAM_TOKEN
-DEBUG_BOT_TOKEN = secrets.DEBUG_BOT_TOKEN
+PRICE_TELEGRAM_TOKEN = os.getenv("PRICE_TELEGRAM_TOKEN")
+DEBUG_BOT_TOKEN = os.getenv("DEBUG_BOT_TOKEN")
 
 all_pairs = []   # Store all available pairs
 ignored_pairs = set() # Store ignored pairs from the ban table
 
-DEBUG_CHAT_ID = secrets.DEBUG_CHAT_ID
+DEBUG_CHAT_ID = os.getenv("DEBUG_CHAT_ID")
 
 # Set up logging
 logging.basicConfig(
@@ -51,7 +55,9 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-WHITELIST_DB_PATH = "/var/www/site/payment/whitelist.db"
+#WHITELIST_DB_PATH = "/var/www/site/payment/whitelist.db"
+WHITELIST_DB_PATH = "databases_modified_whitelist/whitelist.db"
+
 BAN_PAIRS_DB_PATH = "/var/www/site/payment/ban_pairs.db"
 
 #---------------------------------------- RATE LIMITING AND MESSAGE QUEUE --------------------------------------------------
@@ -423,7 +429,7 @@ def is_user_whitelisted_and_active(chat_id):
     cursor = db.cursor()
 
     # Query to check if the user exists and is active in the whitelist table
-    cursor.execute('SELECT 1 FROM whitelist WHERE TelegramID = ? AND Active = 1', (chat_id,))
+    cursor.execute('SELECT 1 FROM whitelist WHERE TelegramID = ? AND Active = 1 AND Blocked = 0', (chat_id,))
     result = cursor.fetchone()
 
     # Close the database connection
@@ -644,7 +650,7 @@ def load_user_data():
     try:
         db = sqlite3.connect(WHITELIST_DB_PATH)
         cursor = db.cursor()
-        cursor.execute('SELECT TelegramID, Pindex, Ppercent, Dindex, Dpercent, Filter FROM whitelist WHERE Active = 1 OR Test = 1')
+        cursor.execute("SELECT TelegramID, Pindex, Percent, Dindex, Dpercent, Filter, Binance, Bybit, Blocked FROM whitelist WHERE Active = 1")
         rows = cursor.fetchall()
         for row in rows:
             telegram_id = int(row[0])
@@ -653,6 +659,9 @@ def load_user_data():
             d_index = row[3]
             d_percent = row[4]
             alert_limit = row[5] if row[5] is not None else 100  # Default to 100 if NULL
+            binance = row[6]
+            bybit = row[7]
+            blocked = row[8]
 
             # Updated dictionary without long conditions
             bot_data[telegram_id] = {
@@ -660,7 +669,10 @@ def load_user_data():
                 'pump_threshold': p_percent,
                 'dump_index': d_index,
                 'dump_threshold': d_percent,
-                'alert_limit': alert_limit
+                'alert_limit': alert_limit,
+                'binance': binance,
+                'bybit': bybit,
+                'blocked': blocked
             }
         db.close()
         print(f"Loaded user data for {len(rows)} users.")
@@ -687,12 +699,12 @@ async def price_start(message: Message):
             cursor = db.cursor()
 
             # Check if the user is already in the whitelist
-            cursor.execute('SELECT Active, Test, StartDate, EndDate, Pindex, Ppercent, Dindex, Dpercent FROM whitelist WHERE TelegramID = ?', (chat_id,))
+            cursor.execute('SELECT Active, StartDate, EndDate, Pindex, Percent, Dindex, Dpercent, Binance, Bybit, Blocked FROM whitelist WHERE TelegramID = ?', (chat_id,))
             result = cursor.fetchone()
 
             if result:
                 # User exists in the database
-                active, test, start_date_db, end_date_db, p_index, p_percent, d_index, d_percent = result
+                active, start_date_db, end_date_db, p_index, p_percent, d_index, d_percent, binance, bybit, blocked = result
                 is_new_user = False
                 start_date = start_date_db
                 end_date = end_date_db
@@ -718,11 +730,13 @@ async def price_start(message: Message):
                 p_index, p_percent = 3, 5
                 d_index, d_percent = 2, 8
                 active = 1
-                test = 1
+                binance = 1
+                bybit = 1
+                blocked = 0
                 cursor.execute('''
-                    INSERT INTO whitelist (TelegramID, Username, Referral, Active, Test, StartDate, EndDate, Pindex, Ppercent, Dindex, Dpercent)
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-                ''', (chat_id, username, referral_code, active, test, start_date, end_date, p_index, p_percent, d_index, d_percent))
+                    INSERT INTO whitelist (TelegramID, Username, Referral, Active, StartDate, EndDate, Pindex, Percent, Dindex, Dpercent, Binance, Bybit, Blocked)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                ''', (chat_id, username, referral_code, active, start_date, end_date, p_index, p_percent, d_index, d_percent, binance, bybit, blocked))
                 db.commit()
                 is_new_user = True
 
@@ -731,7 +745,10 @@ async def price_start(message: Message):
                 'pump_index': p_index,
                 'pump_threshold': p_percent,
                 'dump_index': d_index,
-                'dump_threshold': d_percent
+                'dump_threshold': d_percent,
+                'binance': binance,
+                'bybit': bybit,
+                'blocked': blocked
             }
 
             # Compose the welcome message
