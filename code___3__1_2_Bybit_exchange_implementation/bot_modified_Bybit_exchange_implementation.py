@@ -280,17 +280,57 @@ async def price_fetch_initial_prices():
     fetched_summary = {}
 
     for exchange_name, exchange in exchanges.items():
+        print(f"**** [[ Starting fetch for {exchange_name}... ]]****") # ДЛЯ ОТЛАДОЧНОГО ВЫВОДА: Начало обработки
         # Load all available USDT-M PERPETUAL markets
         markets = await exchange.load_markets()
-        all_pairs[exchange_name] = [
-            pair for pair, data in markets.items()
-            if data.get('info', {}).get('contractType') == 'PERPETUAL' and data.get('quote') == 'USDT'
-        ]
+
+        # Отладка структуры markets для Bybit
+        if exchange_name == 'bybit' and markets:
+            sample_pair, sample_data = list(markets.items())[0]
+            print(f"****[[ Bybit sample market: {sample_pair}: {sample_data} ]]****") # ДЛЯ ОТЛАДОЧНОГО ВЫВОДА
+
+        # ВРЕМЕННАЯ ОТЛАДКА СТРУКТУРЫ "markets":
+        if exchange_name == 'bybit':
+            all_pairs[exchange_name] = [
+                pair for pair, data in markets.items()
+                if data.get('quote') == 'USDT' and data.get('type') == 'swap' and data.get('linear', False)
+            ]
+        else:  # для Binance
+            all_pairs[exchange_name] = [
+                pair for pair, data in markets.items()
+                if data.get('info', {}).get('contractType') == 'PERPETUAL' and data.get('quote') == 'USDT'
+            ]
+        print(f"****[[ {exchange_name} total pairs from load_markets: {len(all_pairs[exchange_name])} ]]****") # ДЛЯ ОТЛАДОЧНОГО ВЫВОДА: Сколько пар найдено
+        print(f"****[[ {exchange_name} first 5 pairs: {all_pairs[exchange_name][:5]} ]]****") # ДЛЯ ОТЛАДОЧНОГО ВЫВОДА: Первые 5 пар для проверки формата
+
         pairs = [pair for pair in all_pairs[exchange_name] if pair not in ignored_pairs]
+        print(f"****[[ {exchange_name} pairs after filtering ignored: {len(pairs)} ]]****") # ДЛЯ ОТЛАДОЧНОГО ВЫВОДА: После фильтрации игнорируемых пар
 
         # Fetch tickers and OI
-        all_tickers = await exchange.fetch_tickers(pairs)
-        all_oi = await exchange.fetch_open_interest(pairs) if exchange_name == 'bybit' else {}  # Bybit-specific OI fetching
+        try:
+            all_tickers = await exchange.fetch_tickers(pairs)
+            print(f"****[[ {exchange_name} tickers fetched: {len(all_tickers)} ]]****") # ДЛЯ ОТЛАДОЧНОГО ВЫВОДА: Сколько тикеров получено
+            print(f"****[[ {exchange_name} sample ticker data: {list(all_tickers.items())[:2]} ]]****") # ДЛЯ ОТЛАДОЧНОГО ВЫВОДА: Пример данных тикеров
+        except Exception as e:
+            print(f"****[[ Error fetching tickers for {exchange_name}: {e} ]]****") # ДЛЯ ОТЛАДОЧНОГО ВЫВОДА
+            all_tickers = {}
+        
+        all_oi = {}
+        if exchange_name == 'bybit':
+            try:
+                for pair in pairs:
+                    try:
+                        oi_data = await exchange.fetch_open_interest(pair)
+                        all_oi[pair] = oi_data
+                        print(f"****[[ {exchange_name} OI fetched for {pair}: {oi_data} ]]****")
+                    except Exception as e:
+                        print(f"****[[ Failed to fetch OI for {pair} on {exchange_name}: {e} ]]****")
+                print(f"****[[ {exchange_name} OI fetched: {len(all_oi)} ]]****")
+                # Добавляем отладку первых 5 пар OI:
+                if all_oi:
+                    print(f"****[[ {exchange_name} first 5 OI pairs: {list(all_oi.items())[:5]} ]]****")
+            except Exception as e:
+                print(f"****[[ Error fetching OI for {exchange_name}: {e} ]]****")
 
         fetched, skipped = 0, 0
         for pair in pairs:
@@ -307,6 +347,7 @@ async def price_fetch_initial_prices():
                 open_interest[exchange_name][pair] = [oi]
 
         fetched_summary[exchange_name] = (fetched, skipped, len([p for p in all_pairs[exchange_name] if p in ignored_pairs]))
+        print(f"****[[ {exchange_name} summary: {fetched} fetched, {skipped} skipped, {fetched_summary[exchange_name][2]} ignored ]]****") # ДЛЯ ОТЛАДОЧНОГО ВЫВОДА: Итог
 
     end_time = datetime.now().strftime("%H:%M:%S")
     summary_message = (
@@ -328,12 +369,29 @@ async def price_fetch_and_compare_prices():
         fetched_count = {'binance': 0, 'bybit': 0}
 
         for exchange_name, exchange in exchanges.items():
-            tracked_pairs = list(prices[exchange_name].keys())
+            tracked_pairs = [pair for pair in all_pairs[exchange_name] if pair not in ignored_pairs]
+            print(f"***[[ {exchange_name} tracked pairs: {len(tracked_pairs)} ]]****") # ДЛЯ ОТЛАДОЧНОГО ВЫВОДА: Сколько пар отслеживается
+            
             if not tracked_pairs:
+                print(f"****[[ No tracked pairs for {exchange_name}, skipping... ]]****") # ДЛЯ ОТЛАДОЧНОГО ВЫВОДА
                 continue
-
-            all_tickers = await exchange.fetch_tickers(tracked_pairs)
-            all_oi = await exchange.fetch_open_interest(tracked_pairs) if exchange_name == 'bybit' else {}
+            
+            try:
+                all_tickers = await exchange.fetch_tickers(tracked_pairs)
+                print(f"****[[ {exchange_name} tickers fetched: {len(all_tickers)} ]]****") # ДЛЯ ОТЛАДОЧНОГО ВЫВОДА: Сколько тикеров обновлено
+            except Exception as e:
+                print(f"****[[ Error fetching tickers for {exchange_name}: {e} ]]****") # ДЛЯ ОТЛАДОЧНОГО ВЫВОДА
+                all_tickers = {}
+            
+            all_oi = {}
+            if exchange_name == 'bybit':
+                try:
+                    for pair in tracked_pairs:
+                        oi_data = await exchange.fetch_open_interest(pair)
+                        all_oi[pair] = oi_data.get('openInterestAmount', 0)
+                    print(f"****[[ {exchange_name} OI fetched: {len(all_oi)} ]]****") # ДЛЯ ОТЛАДОЧНОГО ВЫВОДА: Сколько OI обновлено
+                except Exception as e:
+                    print(f"****[[ Error fetching OI for {exchange_name}: {e} ]]****") # ДЛЯ ОТЛАДОЧНОГО ВЫВОДА
 
             async with prices_lock:
                 for pair in tracked_pairs:
@@ -358,6 +416,7 @@ async def price_fetch_and_compare_prices():
                         else:
                             open_interest[exchange_name][pair] = [new_oi]
 
+        print(f"****[[ Fetched counts: {fetched_count} ]]****") # ДЛЯ ОТЛАДОЧНОГО ВЫВОДА: Итоговое количество обновлённых пар
         return fetched_count
 
     except Exception as e:
@@ -382,28 +441,52 @@ async def reinitialize_pairs():
         fetched_summary = {}
 
         for exchange_name, exchange in exchanges.items():
+            print(f"****[[ Reinitializing {exchange_name}... ]]****") # ДЛЯ ОТЛАДОЧНОГО ВЫВОДА: Начало переинициализации
             try:
                 markets = await exchange.load_markets()
-                current_all_pairs = [
-                    pair for pair, data in markets.items()
-                    if data.get('info', {}).get('contractType') == 'PERPETUAL' and data.get('quote') == 'USDT'
-                ]
+                
+                # ДОБАВЛЯЕМ ОТЛАДКУ ДЛЯ Bybit:
+                if exchange_name == 'bybit' and markets:
+                    sample_pair, sample_data = list(markets.items())[0] # ДЛЯ ОТЛАДОЧНОГО ВЫВОДА: Первая пара для примера
+                    print(f"****[[ Bybit sample market: {sample_pair}: {sample_data} ]]****") # ДЛЯ ОТЛАДОЧНОГО ВЫВОДА
+                
+                if exchange_name == 'bybit':
+                    current_all_pairs = [
+                        pair for pair, data in markets.items()
+                        if data.get('quote') == 'USDT' and data.get('type') == 'swap' and data.get('linear', False)
+                    ]
+                else:  # Binance
+                    current_all_pairs = [
+                        pair for pair, data in markets.items()
+                        if data.get('info', {}).get('contractType') == 'PERPETUAL' and data.get('quote') == 'USDT'
+                    ]
+                print(f"****[[ {exchange_name} total pairs from load_markets: {len(current_all_pairs)} ]]****") # ДЛЯ ОТЛАДОЧНОГО ВЫВОДА: Сколько пар найдено
+                print(f"****[[ {exchange_name} first 5 pairs: {current_all_pairs[:5]} ]]****") # ДЛЯ ОТЛАДОЧНОГО ВЫВОДА
 
                 async with prices_lock:
                     for pair in list(prices[exchange_name].keys()):
                         if pair in ignored_pairs or not prices[exchange_name][pair]:
                             del prices[exchange_name][pair]
 
-                all_tickers = await exchange.fetch_tickers(current_all_pairs)
-                # Для Bybit загружаем OI для каждой пары отдельно
+                try:
+                    all_tickers = await exchange.fetch_tickers(current_all_pairs)
+                    print(f"****[[ {exchange_name} tickers fetched: {len(all_tickers)} ]]****") # ДЛЯ ОТЛАДОЧНОГО ВЫВОДА: Сколько тикеров получено
+                except Exception as e:
+                    print(f"****[[ Error fetching tickers for {exchange_name}: {e} ]]****") # ДЛЯ ОТЛАДОЧНОГО ВЫВОДА
+                    all_tickers = {}
+
                 all_oi = {}
                 if exchange_name == 'bybit':
                     for pair in current_all_pairs:
                         try:
                             oi_data = await exchange.fetch_open_interest(pair)
                             all_oi[pair] = oi_data
+                            print(f"****[[ {exchange_name} OI fetched for {pair}: {oi_data} ]]****") # ДЛЯ ОТЛАДОЧНОГО ВЫВОДА: OI для каждой пары
                         except Exception as e:
-                            print(f"Failed to fetch OI for {pair} on {exchange_name}: {e}")
+                            print(f"****[[ Failed to fetch OI for {pair} on {exchange_name}: {e} ]]****") # ДЛЯ ОТЛАДОЧНОГО ВЫВОДА
+                    # Добавляем отладку первых 5 пар OI:
+                    if all_oi:
+                        print(f"****[[ {exchange_name} first 5 OI pairs: {list(all_oi.items())[:5]} ]]****")
 
                 fetched, skipped, ignored_count = 0, 0, 0
                 for pair in current_all_pairs:
@@ -438,6 +521,7 @@ async def reinitialize_pairs():
 
                 all_pairs[exchange_name] = current_all_pairs
                 fetched_summary[exchange_name] = (fetched, skipped, ignored_count)
+                print(f"****[[ {exchange_name} summary: {fetched} fetched, {skipped} skipped, {ignored_count} ignored ]]****") # ДЛЯ ОТЛАДОЧНОГО ВЫВОДА: Итог
             except Exception as e:
                 error_message = f"Error reinitializing {exchange_name}: {e}\n{traceback.format_exc()}"
                 print(error_message)
