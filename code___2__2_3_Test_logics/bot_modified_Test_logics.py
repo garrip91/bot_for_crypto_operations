@@ -48,15 +48,17 @@ ignored_pairs = set() # Store ignored pairs from the ban table
 
 DEBUG_CHAT_ID = os.getenv("DEBUG_CHAT_ID")
 
-# Set up logging
+# Настройка логирования
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    level=logging.INFO
+    level=logging.INFO,
+    filename='LOGS.log',  # Укажите здесь путь к вашему файлу логов
+    filemode='a'  # 'a' - append (дописывать), 'w' - overwrite (перезаписывать)
 )
 logger = logging.getLogger(__name__)
 
 #WHITELIST_DB_PATH = "/var/www/site/payment/whitelist.db"
-WHITELIST_DB_PATH = "databases_modified_whitelist/whitelist.db"
+WHITELIST_DB_PATH = "../databases_modified_whitelist/whitelist.db"
 
 BAN_PAIRS_DB_PATH = "/var/www/site/payment/ban_pairs.db"
 
@@ -650,7 +652,7 @@ def load_user_data():
     try:
         db = sqlite3.connect(WHITELIST_DB_PATH)
         cursor = db.cursor()
-        cursor.execute("SELECT TelegramID, Pindex, Percent, Dindex, Dpercent, Filter, Binance, Bybit, Blocked FROM whitelist WHERE Active = 1")
+        cursor.execute("SELECT TelegramID, Pindex, Ppercent, Dindex, Dpercent, Filter, Binance, Bybit, Blocked FROM whitelist WHERE Active = 1")
         rows = cursor.fetchall()
         for row in rows:
             telegram_id = int(row[0])
@@ -699,7 +701,7 @@ async def price_start(message: Message):
             cursor = db.cursor()
 
             # Check if the user is already in the whitelist
-            cursor.execute('SELECT Active, StartDate, EndDate, Pindex, Percent, Dindex, Dpercent, Binance, Bybit, Blocked FROM whitelist WHERE TelegramID = ?', (chat_id,))
+            cursor.execute('SELECT Active, StartDate, EndDate, Pindex, Ppercent, Dindex, Dpercent, Binance, Bybit, Blocked FROM whitelist WHERE TelegramID = ?', (chat_id,))
             result = cursor.fetchone()
 
             if result:
@@ -722,7 +724,7 @@ async def price_start(message: Message):
                 bybit = 1
                 blocked = 0
                 cursor.execute('''
-                    INSERT INTO whitelist (TelegramID, Username, Referral, Active, StartDate, EndDate, Pindex, Percent, Dindex, Dpercent, Binance, Bybit, Blocked)
+                    INSERT INTO whitelist (TelegramID, Username, Referral, Active, StartDate, EndDate, Pindex, Ppercent, Dindex, Dpercent, Binance, Bybit, Blocked)
                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 ''', (chat_id, username, referral_code, active, start_date, end_date, p_index, p_percent, d_index, d_percent, binance, bybit, blocked))
                 db.commit()
