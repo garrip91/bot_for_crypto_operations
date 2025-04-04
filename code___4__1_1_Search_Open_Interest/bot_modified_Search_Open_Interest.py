@@ -52,7 +52,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Пути к базам данных
-WHITELIST_DB_PATH = "../databases_modified_whitelist_1/whitelist.db"
+WHITELIST_DB_PATH = "../databases_modified_whitelist_2/whitelist.db"
 BAN_PAIRS_DB_PATH = "/var/www/site/payment/ban_pairs.db"
 
 # Глобальные константы и переменные
@@ -462,6 +462,7 @@ async def price_send_alert(exchange, pair, change_percent, old_value, new_value,
 
 # Проверка изменений и отправка уведомлений
 async def price_check_and_send_notifications():
+    
     global notification_counters, last_counter_reset_date
     current_date = datetime.now().date()
     if current_date != last_counter_reset_date:
@@ -481,7 +482,7 @@ async def price_check_and_send_notifications():
                         continue
                     
                     alert_limit = settings.get('alert_limit', 20)
-                    notifications_sent = notification_counters[chat_id][pair]  # Исправлено: убраны скобки после chat_id
+                    notifications_sent = notification_counters[chat_id][pair]
                     if alert_limit is not None and notifications_sent >= alert_limit:
                         continue
                     
@@ -498,7 +499,8 @@ async def price_check_and_send_notifications():
                     if oi_cooldown[exchange][pair][chat_id]['OI'] > 0:
                         oi_cooldown[exchange][pair][chat_id]['OI'] -= 1
                     
-                    # Проверка цен
+                    # Проверка цен (приоритет)
+                    price_triggered = False
                     new_price = price_list[0]
                     pump_index = settings['pump_index']
                     pump_threshold = settings['pump_threshold']
@@ -508,7 +510,8 @@ async def price_check_and_send_notifications():
                         if change_percent >= pump_threshold:
                             await price_send_alert(exchange, pair, change_percent, old_price, new_price, price_list, 'Short', settings, chat_id)
                             prices_cooldown[exchange][pair][chat_id]['Short'] = pump_index
-                            notification_counters[chat_id][pair] += 1  # Исправлено: убраны скобки после chat_id
+                            notification_counters[chat_id][pair] += 1
+                            price_triggered = True
                             continue
                     
                     d_index = settings['dump_index']
@@ -519,19 +522,23 @@ async def price_check_and_send_notifications():
                         if change_percent <= -d_threshold:
                             await price_send_alert(exchange, pair, change_percent, old_price, new_price, price_list, 'Dump', settings, chat_id)
                             prices_cooldown[exchange][pair][chat_id]['Dump'] = d_index
-                            notification_counters[chat_id][pair] += 1  # Исправлено: убраны скобки после chat_id
-                            continue  # Добавлен continue для избежания двойных уведомлений
+                            notification_counters[chat_id][pair] += 1
+                            price_triggered = True
+                            continue
                     
-                    # Проверка OI (базовая реализация, будет доработана в п.1.1)
-                    oi_list = open_interest[exchange].get(pair, [])
-                    if len(oi_list) > settings.get('oi_period', 5) and oi_cooldown[exchange][pair][chat_id]['OI'] == 0:
-                        old_oi = oi_list[settings['oi_period']]
-                        new_oi = oi_list[0]
-                        oi_change = (new_oi - old_oi) / old_oi * 100 if old_oi != 0 else 0
-                        if abs(oi_change) >= settings.get('oi_threshold', 10):
-                            await price_send_alert(exchange, pair, oi_change, old_oi, new_oi, oi_list, 'Change', settings, chat_id, is_oi=True)
-                            oi_cooldown[exchange][pair][chat_id]['OI'] = settings['oi_period']
-                            notification_counters[chat_id][pair] += 1  # Исправлено: убраны скобки после chat_id
+                    # Проверка OI (только если не сработало уведомление о цене)
+                    if not price_triggered:
+                        oi_list = open_interest[exchange].get(pair, [])
+                        oi_period = settings['oi_period']
+                        oi_threshold = settings['oi_threshold']
+                        if len(oi_list) > oi_period and oi_cooldown[exchange][pair][chat_id]['OI'] == 0:
+                            old_oi = oi_list[oi_period]
+                            new_oi = oi_list[0]
+                            oi_change = (new_oi - old_oi) / old_oi * 100 if old_oi != 0 else 0
+                            if abs(oi_change) >= oi_threshold:
+                                await price_send_alert(exchange, pair, oi_change, old_oi, new_oi, oi_list, 'Change', settings, chat_id, is_oi=True)
+                                oi_cooldown[exchange][pair][chat_id]['OI'] = oi_period
+                                notification_counters[chat_id][pair] += 1
 
 
 # Отправка сообщения пользователю
@@ -606,7 +613,7 @@ def load_user_data():
     try:
         db = sqlite3.connect(WHITELIST_DB_PATH)
         cursor = db.cursor()
-        cursor.execute("SELECT TelegramID, Pindex, Ppercent, Dindex, Dpercent, Filter, Binance, Bybit, Blocked FROM whitelist WHERE Active = 1")
+        cursor.execute("SELECT TelegramID, Pindex, Ppercent, Dindex, Dpercent, Filter, Binance, Bybit, Blocked, OIperiod, OIpercent FROM whitelist WHERE Active = 1")
         rows = cursor.fetchall()
         for row in rows:
             telegram_id = int(row[0])
@@ -618,6 +625,8 @@ def load_user_data():
             binance = row[6]
             bybit = row[7]
             blocked = row[8]
+            oi_period = row[9] if row[9] is not None else 5
+            oi_threshold = row[10] if row[10] is not None else 10.0
             bot_data[telegram_id] = {
                 'pump_index': p_index,
                 'pump_threshold': p_percent,
@@ -627,8 +636,8 @@ def load_user_data():
                 'binance': binance,
                 'bybit': bybit,
                 'blocked': blocked,
-                'oi_period': 5,  # Значение по умолчанию, будет доработано в п.1.1
-                'oi_threshold': 10  # Значение по умолчанию, будет доработано в п.1.1
+                'oi_period': oi_period,
+                'oi_threshold': oi_threshold
             }
         db.close()
         print(f"Loaded user data for {len(rows)} users.")
@@ -649,11 +658,11 @@ async def price_start(message: Message):
         referral_code = args[0] if args else None
         db = sqlite3.connect(WHITELIST_DB_PATH)
         cursor = db.cursor()
-        cursor.execute('SELECT Active, StartDate, EndDate, Pindex, Ppercent, Dindex, Dpercent, Binance, Bybit, Blocked FROM whitelist WHERE TelegramID = ?', (chat_id,))
+        cursor.execute('SELECT Active, StartDate, EndDate, Pindex, Ppercent, Dindex, Dpercent, Binance, Bybit, Blocked, OIperiod, OIpercent FROM whitelist WHERE TelegramID = ?', (chat_id,))
         result = cursor.fetchone()
         
         if result:
-            active, start_date_db, end_date_db, p_index, p_percent, d_index, d_percent, binance, bybit, blocked = result
+            active, start_date_db, end_date_db, p_index, p_percent, d_index, d_percent, binance, bybit, blocked, oi_period, oi_threshold = result
             is_new_user = False
             start_date = start_date_db
             end_date = end_date_db
@@ -667,10 +676,11 @@ async def price_start(message: Message):
             binance = 1
             bybit = 1
             blocked = 0
+            oi_period, oi_threshold = 5, 10
             cursor.execute('''
-                INSERT INTO whitelist (TelegramID, Username, Referral, Active, StartDate, EndDate, Pindex, Ppercent, Dindex, Dpercent, Binance, Bybit, Blocked)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            ''', (chat_id, username, referral_code, active, start_date, end_date, p_index, p_percent, d_index, d_percent, binance, bybit, blocked))
+                INSERT INTO whitelist (TelegramID, Username, Referral, Active, StartDate, EndDate, Pindex, Ppercent, Dindex, Dpercent, Binance, Bybit, Blocked, OIperiod, OIpercent)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ''', (chat_id, username, referral_code, active, start_date, end_date, p_index, p_percent, d_index, d_percent, binance, bybit, blocked, oi_period, oi_threshold))
             db.commit()
             is_new_user = True
         
@@ -683,25 +693,25 @@ async def price_start(message: Message):
             'binance': binance,
             'bybit': bybit,
             'blocked': blocked,
-            'oi_period': 5,
-            'oi_threshold': 10
+            'oi_period': oi_period,
+            'oi_threshold': oi_threshold
         }
         
         welcome_message = (
             "Welcome to the Pump Bot!\n\n"
             "⭐️<b>How can this bot help you?</b>⭐️\n"
-            "The Pump Bot is designed to keep you ahead of the market. Every second, it scans all market coins to detect price changes in real-time. "
-            "Whether prices are surging or dropping, this bot will notify you immediately, so you never miss an opportunity.\n\n"
+            "The Pump Bot is designed to keep you ahead of the market. Every second, it scans all market coins to detect price changes and open interest shifts in real-time. "
+            "Whether prices are surging, dropping, or OI is changing significantly, this bot will notify you immediately, so you never miss an opportunity.\n\n"
             "💰<b>How to make money with the Pump Bot?</b>💰\n"
             "The Pump Bot is your ultimate tool for identifying profit-making opportunities in the market."
-            "It allows you to act on Pumps, <b> trade corrections, and short squeezes.</b> \n"
+            "It allows you to act on Pumps, <b> trade corrections, short squeezes, and OI shifts.</b> \n"
             "To maximize your trading success, check out our dedicated channel: https://t.me/opportunity_trading_info \n\n"
             "🤖<b>How to use the bot?</b>🤖\n"
             "You can customize the bot's behavior by pressing the <b>Bot Settings</b> button below and selecting your preferences. "
-            "You decide which price changes matter most to you and over what time period. Here are two examples:\n\n"
+            "You decide which price and OI changes matter most to you and over what time period. Here are two examples:\n\n"
             "⚡️<b>Example 1:</b>\n"
-            "I want to be notified if a coin's price increases by 4% within 2 minutes.\n"
-            "In this case, the bot will detect any coin that grows by 4% in that time frame and notify you right away.\n\n"
+            "I want to be notified if a coin's price increases by 4% within 2 minutes or OI changes by 10% in 5 minutes.\n"
+            "In this case, the bot will detect these changes and notify you right away.\n\n"
             "⚡️<b>Example 2:</b>\n"
             "I want to be alerted if a coin drops by 15% over 30 minutes.\n"
             "If such a drop occurs, the bot will instantly notify you, ensuring you're always informed about significant market movements.\n\n"
@@ -748,16 +758,17 @@ async def price_show_bot_settings(message: Message):
         cursor.execute('SELECT Active FROM whitelist WHERE TelegramID = ?', (chat_id,))
         status_check = cursor.fetchone()
         active = int(status_check[0]) if status_check else 0
-        cursor.execute('SELECT Pindex, Ppercent, Dindex, Dpercent, Filter FROM whitelist WHERE TelegramID = ?', (chat_id,))
+        cursor.execute('SELECT Pindex, Ppercent, Dindex, Dpercent, Filter, OIperiod, OIpercent FROM whitelist WHERE TelegramID = ?', (chat_id,))
         user_settings = cursor.fetchone()
         
         if user_settings:
-            p_index, p_percent, d_index, d_percent, alert_limit = user_settings
+            p_index, p_percent, d_index, d_percent, alert_limit, oi_period, oi_threshold = user_settings
             alert_limit = alert_limit if alert_limit is not None else 100
         else:
             p_index, p_percent = 3, 5
             d_index, d_percent = 2, 8
             alert_limit = 100
+            oi_period, oi_threshold = 5, 10
         
         bot_data[chat_id] = {
             'pump_index': p_index,
@@ -765,8 +776,8 @@ async def price_show_bot_settings(message: Message):
             'dump_index': d_index,
             'dump_threshold': d_percent,
             'alert_limit': alert_limit,
-            'oi_period': 5,
-            'oi_threshold': 10
+            'oi_period': oi_period,
+            'oi_threshold': oi_threshold
         }
         
         first_message = (
@@ -779,11 +790,9 @@ async def price_show_bot_settings(message: Message):
             f"- Notify me if a coin's price increases by 10% in 2 minutes:\n"
             f"🟢 Pump Period: 2\n"
             f"➗ Pump Percentage: 10\n\n"
-            f"- Notify me if a coin's price drops by 15% in 10 minutes:\n"
-            f"🔴 Dump Period: 10\n"
-            f"➗ Dump Percentage: 15\n\n"
-            f"- Limit notifications to 5 per day per pair:\n"
-            f"🔔 Alert Limit: 5"
+            f"- Notify me if OI changes by 15% in 5 minutes:\n"
+            f"📈 OI Period: 5\n"
+            f"➗ OI Percentage: 15"
         )
         await message.reply(first_message, parse_mode='HTML')
         
@@ -791,6 +800,7 @@ async def price_show_bot_settings(message: Message):
             keyboard=[
                 [KeyboardButton(text="🟢 Pump Period"), KeyboardButton(text="➗ Pump Percentage")],
                 [KeyboardButton(text="🔴 Dump Period"), KeyboardButton(text="➗ Dump Percentage")],
+                [KeyboardButton(text="📈 OI Period"), KeyboardButton(text="➗ OI Percentage")],
                 [KeyboardButton(text="🔔 Alert Limit")],
                 [KeyboardButton(text="Back")]
             ],
@@ -803,6 +813,8 @@ async def price_show_bot_settings(message: Message):
             f"➗ Pump Percentage: <b>{p_percent}%</b>\n\n"
             f"🔴 Dump Period: <b>{d_index}</b> min\n"
             f"➗ Dump Percentage: <b>{d_percent}%</b>\n\n"
+            f"📈 OI Period: <b>{oi_period}</b> min\n"
+            f"➗ OI Percentage: <b>{oi_threshold}%</b>\n\n"
             f"🔔 Alert Limit: <b>{'Not set' if alert_limit == 100 else ('Unlimited' if alert_limit is None else f'{alert_limit} per day')}</b>"
         )
         await message.reply(second_message, reply_markup=keyboard, parse_mode='HTML')
@@ -1084,10 +1096,51 @@ async def awaiting_alert_limit(message: Message):
     )
 
 
+# Ожидание ввода OI Period
+@price_router.message(F.text == "📈 OI Period")
+@telegram_error_handler
+async def awaiting_oi_period(message: Message):
+    chat_id = message.chat.id
+    user_data[chat_id] = {'awaiting': 'oi_period'}
+    keyboard = ReplyKeyboardMarkup(
+        keyboard=[[KeyboardButton(text="Cancel")]],
+        resize_keyboard=True,
+        one_time_keyboard=True
+    )
+    current_value = bot_data.get(chat_id, {}).get('oi_period', 'Not set')
+    await message.reply(
+        f"Your current 📈 <b>OI Period</b> is <b>{current_value}</b>\n"
+        "Please, set your new 📈 <b>OI Period</b> (1-30 minutes):",
+        parse_mode='HTML',
+        reply_markup=keyboard
+    )
+
+
+# Ожидание ввода OI Percentage
+@price_router.message(F.text == "➗ OI Percentage")
+@telegram_error_handler
+async def awaiting_oi_threshold(message: Message):
+    chat_id = message.chat.id
+    user_data[chat_id] = {'awaiting': 'oi_threshold'}
+    keyboard = ReplyKeyboardMarkup(
+        keyboard=[[KeyboardButton(text="Cancel")]],
+        resize_keyboard=True,
+        one_time_keyboard=True
+    )
+    current_value = bot_data.get(chat_id, {}).get('oi_threshold', 'Not set')
+    await message.reply(
+        f"Your current ➗ <b>OI Percentage</b> is <b>{current_value}%</b>\n"
+        "Please, set your new ➗ <b>OI Percentage</b> (1-100%):",
+        parse_mode='HTML',
+        reply_markup=keyboard
+    )
+
+
 # Установка предпочтений пользователя
 @price_router.message(lambda message: message.text and not message.text.startswith('/') and not message.text in [
     "Bot Settings", "Payment Settings", "Contact Support", "Make a payment", "Check profile", "Back", "Cancel",
-    "🟢 Pump Period", "➗ Pump Percentage", "🔴 Dump Period", "➗ Dump Percentage", "🔔 Alert Limit"
+    "🟢 Pump Period", "➗ Pump Percentage", "🔴 Dump Period", "➗ Dump Percentage", "🔔 Alert Limit",
+    "📈 OI Period", "➗ OI Percentage"
 ])
 @telegram_error_handler
 async def price_set_pref(message: Message):
@@ -1107,7 +1160,9 @@ async def price_set_pref(message: Message):
         'pump_threshold': ('pump_threshold', float, 1, 100, "Please choose a number from 1 to 100"),
         'dump_index': ('dump_index', int, 1, 30, "Please choose a number from 1 to 30"),
         'dump_threshold': ('dump_threshold', float, 1, 100, "Please choose a number from 1 to 100"),
-        'alert_limit': ('alert_limit', int, 1, 20, "Please choose a number from 1 to 20, or type 'all' to receive all notifications")
+        'alert_limit': ('alert_limit', int, 1, 20, "Please choose a number from 1 to 20, or type 'all' to receive all notifications"),
+        'oi_period': ('oi_period', int, 1, 30, "Please choose a number from 1 to 30"),
+        'oi_threshold': ('oi_threshold', float, 1, 100, "Please choose a number from 1 to 100")
     }
     
     setting_info = setting_type_map.get(setting_type_key)
@@ -1149,7 +1204,9 @@ async def price_set_pref(message: Message):
         'pump_threshold': 'Ppercent',
         'dump_index': 'Dindex',
         'dump_threshold': 'Dpercent',
-        'alert_limit': 'Filter'
+        'alert_limit': 'Filter',
+        'oi_period': 'OIperiod',
+        'oi_threshold': 'OIpercent'
     }
     db_column = db_column_map[setting_name]
     db = sqlite3.connect(WHITELIST_DB_PATH)
@@ -1165,6 +1222,7 @@ async def price_set_pref(message: Message):
         keyboard=[
             [KeyboardButton(text="🟢 Pump Period"), KeyboardButton(text="➗ Pump Percentage")],
             [KeyboardButton(text="🔴 Dump Period"), KeyboardButton(text="➗ Dump Percentage")],
+            [KeyboardButton(text="📈 OI Period"), KeyboardButton(text="➗ OI Percentage")],
             [KeyboardButton(text="🔔 Alert Limit")],
             [KeyboardButton(text="Back")]
         ],
@@ -1176,7 +1234,9 @@ async def price_set_pref(message: Message):
         'pump_threshold': '➗ Pump Percentage',
         'dump_index': '🔴 Dump Period',
         'dump_threshold': '➗ Dump Percentage',
-        'alert_limit': '🔔 Alert Limit'
+        'alert_limit': '🔔 Alert Limit',
+        'oi_period': '📈 OI Period',
+        'oi_threshold': '➗ OI Percentage'
     }
     display_value = 'Unlimited' if (setting_name == 'alert_limit' and value is None) else f"{value}"
     await message.reply(

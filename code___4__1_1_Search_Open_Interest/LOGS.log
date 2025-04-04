@@ -1,0 +1,643 @@
+2025-04-04 14:04:39,525 - aiogram.dispatcher - INFO - Start polling
+2025-04-04 14:04:39,526 - aiogram.dispatcher - INFO - Start polling
+2025-04-04 14:04:39,590 - aiogram.dispatcher - INFO - Run polling for bot @garrip91_bot id=809303024 - 'garrip91'
+2025-04-04 14:04:39,592 - aiogram.dispatcher - INFO - Run polling for bot @garrip91_bot id=809303024 - 'garrip91'
+2025-04-04 14:04:39,681 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:04:39,681 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 809303024)
+2025-04-04 14:04:43,745 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:04:43,746 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 809303024)
+2025-04-04 14:04:44,807 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:04:44,807 - aiogram.dispatcher - WARNING - Sleep for 1.064239 seconds and try again... (tryings = 1, bot id = 809303024)
+2025-04-04 14:04:48,937 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:04:48,937 - aiogram.dispatcher - WARNING - Sleep for 1.167375 seconds and try again... (tryings = 1, bot id = 809303024)
+2025-04-04 14:04:50,165 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:04:50,165 - aiogram.dispatcher - WARNING - Sleep for 1.688770 seconds and try again... (tryings = 2, bot id = 809303024)
+2025-04-04 14:04:54,919 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:04:54,919 - aiogram.dispatcher - WARNING - Sleep for 1.399695 seconds and try again... (tryings = 2, bot id = 809303024)
+2025-04-04 14:04:56,381 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:04:56,382 - aiogram.dispatcher - WARNING - Sleep for 2.126988 seconds and try again... (tryings = 3, bot id = 809303024)
+2025-04-04 14:05:00,004 - __main__ - INFO - Starting reinitialization. Ignored pairs: 1
+2025-04-04 14:05:02,524 - __main__ - INFO - binance: Loaded 3562 markets
+2025-04-04 14:05:02,529 - __main__ - INFO - binance: Filtered 423 USDT perpetual pairs
+2025-04-04 14:05:02,529 - __main__ - INFO - binance: Symbols: 423 (first 5: ['BTC/USDT:USDT', 'ETH/USDT:USDT', 'BCH/USDT:USDT', 'XRP/USDT:USDT', 'EOS/USDT:USDT'])
+2025-04-04 14:05:02,556 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:05:02,557 - aiogram.dispatcher - WARNING - Sleep for 1.648375 seconds and try again... (tryings = 3, bot id = 809303024)
+2025-04-04 14:05:02,990 - __main__ - INFO - binance: Fetched 418 tickers
+2025-04-04 14:05:02,990 - __main__ - INFO - binance: Ticker sample for TLM/USDT:USDT: {'symbol': 'TLM/USDT:USDT', 'timestamp': 1743764715136, 'datetime': '2025-04-04T11:05:15.136Z', 'high': 0.00488, 'low': 0.004248, 'bid': None, 'bidVolume': None, 'ask': None, 'askVolume': None, 'vwap': 0.0045723, 'open': 0.004255, 'close': 0.004511, 'last': 0.004511, 'previousClose': None, 'change': 0.000256, 'percentage': 6.016, 'average': 0.004383, 'baseVolume': 1044947780.0, 'quoteVolume': 4777762.989636, 'markPrice': None, 'indexPrice': None, 'info': {'symbol': 'TLMUSDT', 'priceChange': '0.0002560', 'priceChangePercent': '6.016', 'weightedAvgPrice': '0.0045723', 'lastPrice': '0.0045110', 'lastQty': '2696', 'openPrice': '0.0042550', 'highPrice': '0.0048800', 'lowPrice': '0.0042480', 'volume': '1044947780', 'quoteVolume': '4777762.9896360', 'openTime': '1743678300000', 'closeTime': '1743764715136', 'firstId': '81786162', 'lastId': '81865675', 'count': '79514'}}
+2025-04-04 14:05:02,991 - __main__ - INFO - binance: Final pairs with prices: 418
+2025-04-04 14:05:02,991 - __main__ - INFO - binance: Retrieved 418 pairs from fetch_pairs_and_prices
+2025-04-04 14:05:02,991 - __main__ - INFO - binance: After filtering ignored pairs: 418
+2025-04-04 14:05:04,265 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:05:04,265 - aiogram.dispatcher - WARNING - Sleep for 2.757081 seconds and try again... (tryings = 4, bot id = 809303024)
+2025-04-04 14:05:29,765 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:05:29,766 - aiogram.dispatcher - WARNING - Sleep for 2.052712 seconds and try again... (tryings = 4, bot id = 809303024)
+2025-04-04 14:05:31,879 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:05:31,879 - aiogram.dispatcher - WARNING - Sleep for 3.776202 seconds and try again... (tryings = 5, bot id = 809303024)
+2025-04-04 14:05:35,710 - __main__ - WARNING - Removing OMG/USDT:USDT from binance due to delivery/settlement: binance {"code":-4108,"msg":"Symbol is on delivering or delivered or settling or closed or pre-trading."}
+2025-04-04 14:05:35,720 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:05:35,720 - aiogram.dispatcher - WARNING - Sleep for 2.595413 seconds and try again... (tryings = 5, bot id = 809303024)
+2025-04-04 14:05:37,821 - __main__ - WARNING - Removing WAVES/USDT:USDT from binance due to delivery/settlement: binance {"code":-4108,"msg":"Symbol is on delivering or delivered or settling or closed or pre-trading."}
+2025-04-04 14:05:41,377 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:05:41,377 - aiogram.dispatcher - WARNING - Sleep for 5.040219 seconds and try again... (tryings = 6, bot id = 809303024)
+2025-04-04 14:05:43,105 - __main__ - WARNING - Removing BLZ/USDT:USDT from binance due to delivery/settlement: binance {"code":-4108,"msg":"Symbol is on delivering or delivered or settling or closed or pre-trading."}
+2025-04-04 14:05:44,153 - __main__ - WARNING - Removing FTM/USDT:USDT from binance due to delivery/settlement: binance {"code":-4108,"msg":"Symbol is on delivering or delivered or settling or closed or pre-trading."}
+2025-04-04 14:05:45,188 - __main__ - WARNING - Removing REN/USDT:USDT from binance due to delivery/settlement: binance {"code":-4108,"msg":"Symbol is on delivering or delivered or settling or closed or pre-trading."}
+2025-04-04 14:05:46,478 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:05:46,478 - aiogram.dispatcher - WARNING - Sleep for 3.487327 seconds and try again... (tryings = 6, bot id = 809303024)
+2025-04-04 14:05:47,479 - __main__ - WARNING - Removing OCEAN/USDT:USDT from binance due to delivery/settlement: binance {"code":-4108,"msg":"Symbol is on delivering or delivered or settling or closed or pre-trading."}
+2025-04-04 14:05:48,127 - __main__ - WARNING - Removing CTK/USDT:USDT from binance due to delivery/settlement: binance {"code":-4108,"msg":"Symbol is on delivering or delivered or settling or closed or pre-trading."}
+2025-04-04 14:05:50,027 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:05:50,027 - aiogram.dispatcher - WARNING - Sleep for 5.033803 seconds and try again... (tryings = 7, bot id = 809303024)
+2025-04-04 14:05:51,414 - __main__ - WARNING - Removing LIT/USDT:USDT from binance due to delivery/settlement: binance {"code":-4108,"msg":"Symbol is on delivering or delivered or settling or closed or pre-trading."}
+2025-04-04 14:05:51,736 - __main__ - WARNING - Removing UNFI/USDT:USDT from binance due to delivery/settlement: binance {"code":-4108,"msg":"Symbol is on delivering or delivered or settling or closed or pre-trading."}
+2025-04-04 14:05:52,057 - __main__ - WARNING - Removing REEF/USDT:USDT from binance due to delivery/settlement: binance {"code":-4108,"msg":"Symbol is on delivering or delivered or settling or closed or pre-trading."}
+2025-04-04 14:05:53,028 - __main__ - WARNING - Removing XEM/USDT:USDT from binance due to delivery/settlement: binance {"code":-4108,"msg":"Symbol is on delivering or delivered or settling or closed or pre-trading."}
+2025-04-04 14:05:55,118 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:05:55,119 - aiogram.dispatcher - WARNING - Sleep for 4.651647 seconds and try again... (tryings = 7, bot id = 809303024)
+2025-04-04 14:05:55,369 - __main__ - WARNING - Removing LINA/USDT:USDT from binance due to delivery/settlement: binance {"code":-4108,"msg":"Symbol is on delivering or delivered or settling or closed or pre-trading."}
+2025-04-04 14:05:55,694 - __main__ - WARNING - Removing STMX/USDT:USDT from binance due to delivery/settlement: binance {"code":-4108,"msg":"Symbol is on delivering or delivered or settling or closed or pre-trading."}
+2025-04-04 14:05:59,051 - __main__ - WARNING - Removing DGB/USDT:USDT from binance due to delivery/settlement: binance {"code":-4108,"msg":"Symbol is on delivering or delivered or settling or closed or pre-trading."}
+2025-04-04 14:06:00,975 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:06:00,975 - aiogram.dispatcher - WARNING - Sleep for 5.008051 seconds and try again... (tryings = 8, bot id = 809303024)
+2025-04-04 14:06:03,720 - __main__ - WARNING - Removing KLAY/USDT:USDT from binance due to delivery/settlement: binance {"code":-4108,"msg":"Symbol is on delivering or delivered or settling or closed or pre-trading."}
+2025-04-04 14:06:06,042 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:06:06,042 - aiogram.dispatcher - WARNING - Sleep for 5.090644 seconds and try again... (tryings = 8, bot id = 809303024)
+2025-04-04 14:06:08,752 - __main__ - WARNING - Removing DAR/USDT:USDT from binance due to delivery/settlement: binance {"code":-4108,"msg":"Symbol is on delivering or delivered or settling or closed or pre-trading."}
+2025-04-04 14:06:11,190 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:06:11,190 - aiogram.dispatcher - WARNING - Sleep for 4.823331 seconds and try again... (tryings = 9, bot id = 809303024)
+2025-04-04 14:06:11,361 - __main__ - WARNING - Removing CVX/USDT:USDT from binance due to delivery/settlement: binance {"code":-4108,"msg":"Symbol is on delivering or delivered or settling or closed or pre-trading."}
+2025-04-04 14:06:15,287 - __main__ - WARNING - Removing AGIX/USDT:USDT from binance due to delivery/settlement: binance {"code":-4108,"msg":"Symbol is on delivering or delivered or settling or closed or pre-trading."}
+2025-04-04 14:06:16,072 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:06:16,073 - aiogram.dispatcher - WARNING - Sleep for 5.012014 seconds and try again... (tryings = 9, bot id = 809303024)
+2025-04-04 14:06:16,921 - __main__ - WARNING - Removing BNX/USDT:USDT from binance due to delivery/settlement: binance {"code":-4108,"msg":"Symbol is on delivering or delivered or settling or closed or pre-trading."}
+2025-04-04 14:06:20,894 - __main__ - WARNING - Removing AMB/USDT:USDT from binance due to delivery/settlement: binance {"code":-4108,"msg":"Symbol is on delivering or delivered or settling or closed or pre-trading."}
+2025-04-04 14:06:21,142 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:06:21,142 - aiogram.dispatcher - WARNING - Sleep for 5.105678 seconds and try again... (tryings = 10, bot id = 809303024)
+2025-04-04 14:06:23,168 - __main__ - WARNING - Removing IDEX/USDT:USDT from binance due to delivery/settlement: binance {"code":-4108,"msg":"Symbol is on delivering or delivered or settling or closed or pre-trading."}
+2025-04-04 14:06:24,808 - __main__ - WARNING - Removing RAD/USDT:USDT from binance due to delivery/settlement: binance {"code":-4108,"msg":"Symbol is on delivering or delivered or settling or closed or pre-trading."}
+2025-04-04 14:06:25,133 - __main__ - WARNING - Removing KEY/USDT:USDT from binance due to delivery/settlement: binance {"code":-4108,"msg":"Symbol is on delivering or delivered or settling or closed or pre-trading."}
+2025-04-04 14:06:25,465 - __main__ - WARNING - Removing COMBO/USDT:USDT from binance due to delivery/settlement: binance {"code":-4108,"msg":"Symbol is on delivering or delivered or settling or closed or pre-trading."}
+2025-04-04 14:06:26,305 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:06:26,305 - aiogram.dispatcher - WARNING - Sleep for 4.956836 seconds and try again... (tryings = 10, bot id = 809303024)
+2025-04-04 14:06:26,487 - __main__ - WARNING - Removing MDT/USDT:USDT from binance due to delivery/settlement: binance {"code":-4108,"msg":"Symbol is on delivering or delivered or settling or closed or pre-trading."}
+2025-04-04 14:06:33,961 - __main__ - WARNING - Removing GLMR/USDT:USDT from binance due to delivery/settlement: binance {"code":-4108,"msg":"Symbol is on delivering or delivered or settling or closed or pre-trading."}
+2025-04-04 14:06:34,252 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:06:34,252 - aiogram.dispatcher - WARNING - Sleep for 4.995230 seconds and try again... (tryings = 11, bot id = 809303024)
+2025-04-04 14:06:34,558 - __main__ - WARNING - Removing STRAX/USDT:USDT from binance due to delivery/settlement: binance {"code":-4108,"msg":"Symbol is on delivering or delivered or settling or closed or pre-trading."}
+2025-04-04 14:06:34,880 - __main__ - WARNING - Removing LOOM/USDT:USDT from binance due to delivery/settlement: binance {"code":-4108,"msg":"Symbol is on delivering or delivered or settling or closed or pre-trading."}
+2025-04-04 14:06:35,532 - __main__ - WARNING - Removing BOND/USDT:USDT from binance due to delivery/settlement: binance {"code":-4108,"msg":"Symbol is on delivering or delivered or settling or closed or pre-trading."}
+2025-04-04 14:06:35,855 - __main__ - WARNING - Removing ORBS/USDT:USDT from binance due to delivery/settlement: binance {"code":-4108,"msg":"Symbol is on delivering or delivered or settling or closed or pre-trading."}
+2025-04-04 14:06:36,180 - __main__ - WARNING - Removing STPT/USDT:USDT from binance due to delivery/settlement: binance {"code":-4108,"msg":"Symbol is on delivering or delivered or settling or closed or pre-trading."}
+2025-04-04 14:06:38,648 - __main__ - WARNING - Removing SLP/USDT:USDT from binance due to delivery/settlement: binance {"code":-4108,"msg":"Symbol is on delivering or delivered or settling or closed or pre-trading."}
+2025-04-04 14:06:39,307 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:06:39,307 - aiogram.dispatcher - WARNING - Sleep for 4.897084 seconds and try again... (tryings = 11, bot id = 809303024)
+2025-04-04 14:06:39,439 - __main__ - WARNING - Removing SNT/USDT:USDT from binance due to delivery/settlement: binance {"code":-4108,"msg":"Symbol is on delivering or delivered or settling or closed or pre-trading."}
+2025-04-04 14:06:44,261 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:06:44,261 - aiogram.dispatcher - WARNING - Sleep for 4.832729 seconds and try again... (tryings = 12, bot id = 809303024)
+2025-04-04 14:06:49,152 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:06:49,152 - aiogram.dispatcher - WARNING - Sleep for 4.878224 seconds and try again... (tryings = 12, bot id = 809303024)
+2025-04-04 14:06:54,089 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:06:54,089 - aiogram.dispatcher - WARNING - Sleep for 4.863927 seconds and try again... (tryings = 13, bot id = 809303024)
+2025-04-04 14:06:59,011 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:06:59,011 - aiogram.dispatcher - WARNING - Sleep for 5.147663 seconds and try again... (tryings = 13, bot id = 809303024)
+2025-04-04 14:07:04,214 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:07:04,214 - aiogram.dispatcher - WARNING - Sleep for 5.109127 seconds and try again... (tryings = 14, bot id = 809303024)
+2025-04-04 14:07:10,236 - __main__ - WARNING - Removing AERGO/USDT:USDT from binance due to delivery/settlement: binance {"code":-4108,"msg":"Symbol is on delivering or delivered or settling or closed or pre-trading."}
+2025-04-04 14:07:12,314 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:07:12,314 - aiogram.dispatcher - WARNING - Sleep for 5.009160 seconds and try again... (tryings = 14, bot id = 809303024)
+2025-04-04 14:07:17,380 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:07:17,380 - aiogram.dispatcher - WARNING - Sleep for 5.008389 seconds and try again... (tryings = 15, bot id = 809303024)
+2025-04-04 14:07:22,465 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:07:22,465 - aiogram.dispatcher - WARNING - Sleep for 4.807379 seconds and try again... (tryings = 15, bot id = 809303024)
+2025-04-04 14:07:27,328 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:07:27,328 - aiogram.dispatcher - WARNING - Sleep for 4.867724 seconds and try again... (tryings = 16, bot id = 809303024)
+2025-04-04 14:07:32,256 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:07:32,256 - aiogram.dispatcher - WARNING - Sleep for 5.215756 seconds and try again... (tryings = 16, bot id = 809303024)
+2025-04-04 14:07:37,528 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:07:37,528 - aiogram.dispatcher - WARNING - Sleep for 4.943456 seconds and try again... (tryings = 17, bot id = 809303024)
+2025-04-04 14:07:45,454 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:07:45,454 - aiogram.dispatcher - WARNING - Sleep for 5.182695 seconds and try again... (tryings = 17, bot id = 809303024)
+2025-04-04 14:07:50,698 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:07:50,698 - aiogram.dispatcher - WARNING - Sleep for 5.017397 seconds and try again... (tryings = 18, bot id = 809303024)
+2025-04-04 14:07:54,303 - __main__ - INFO - binance: Final count after OI and cooldown: 384
+2025-04-04 14:07:55,776 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:07:55,777 - aiogram.dispatcher - WARNING - Sleep for 4.910109 seconds and try again... (tryings = 18, bot id = 809303024)
+2025-04-04 14:07:56,593 - __main__ - INFO - bybit: Loaded 2680 markets
+2025-04-04 14:07:56,594 - __main__ - INFO - bybit: Filtered 505 USDT perpetual pairs
+2025-04-04 14:07:56,594 - __main__ - INFO - bybit: Symbols: 505 (first 5: ['10000000AIDOGE/USDT:USDT', '1000000BABYDOGE/USDT:USDT', '1000000CHEEMS/USDT:USDT', '1000000MOG/USDT:USDT', '1000000PEIPEI/USDT:USDT'])
+2025-04-04 14:07:57,682 - __main__ - INFO - bybit: Fetched 505 tickers
+2025-04-04 14:07:57,683 - __main__ - INFO - bybit: Ticker sample for 10000000AIDOGE/USDT:USDT: {'symbol': '10000000AIDOGE/USDT:USDT', 'timestamp': None, 'datetime': None, 'high': 0.0008168, 'low': 0.00072, 'bid': 0.0007698, 'bidVolume': 300.0, 'ask': 0.0007699, 'askVolume': 745900.0, 'vwap': 0.000762117198699918, 'open': 0.0007577, 'close': 0.00077, 'last': 0.00077, 'previousClose': None, 'change': 1.23e-05, 'percentage': 1.6233, 'average': 0.0007638, 'baseVolume': 763398400.0, 'quoteVolume': 581799.0501, 'markPrice': 0.00077, 'indexPrice': 0.0007701, 'info': {'symbol': '10000000AIDOGEUSDT', 'lastPrice': '0.0007700', 'indexPrice': '0.0007701', 'markPrice': '0.0007700', 'prevPrice24h': '0.0007577', 'price24hPcnt': '0.016233', 'highPrice24h': '0.0008168', 'lowPrice24h': '0.0007200', 'prevPrice1h': '0.0007901', 'openInterest': '324812800', 'openInterestValue': '250105.86', 'turnover24h': '581799.0501', 'volume24h': '763398400.0000', 'fundingRate': '0.00004256', 'nextFundingTime': '1743782400000', 'predictedDeliveryPrice': '', 'basisRate': '', 'deliveryFeeRate': '', 'deliveryTime': '0', 'ask1Size': '745900', 'bid1Price': '0.0007698', 'ask1Price': '0.0007699', 'bid1Size': '300', 'basis': '', 'preOpenPrice': '', 'preQty': '', 'curPreListingPhase': ''}}
+2025-04-04 14:07:57,683 - __main__ - INFO - bybit: Final pairs with prices: 505
+2025-04-04 14:07:57,684 - __main__ - INFO - bybit: Retrieved 505 pairs from fetch_pairs_and_prices
+2025-04-04 14:07:57,684 - __main__ - INFO - bybit: After filtering ignored pairs: 505
+2025-04-04 14:08:00,742 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:08:00,742 - aiogram.dispatcher - WARNING - Sleep for 4.870649 seconds and try again... (tryings = 19, bot id = 809303024)
+2025-04-04 14:08:05,670 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:08:05,670 - aiogram.dispatcher - WARNING - Sleep for 5.077793 seconds and try again... (tryings = 19, bot id = 809303024)
+2025-04-04 14:08:10,804 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:08:10,804 - aiogram.dispatcher - WARNING - Sleep for 5.021904 seconds and try again... (tryings = 20, bot id = 809303024)
+2025-04-04 14:08:15,884 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:08:15,884 - aiogram.dispatcher - WARNING - Sleep for 5.042421 seconds and try again... (tryings = 20, bot id = 809303024)
+2025-04-04 14:08:23,915 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:08:23,915 - aiogram.dispatcher - WARNING - Sleep for 5.021828 seconds and try again... (tryings = 21, bot id = 809303024)
+2025-04-04 14:08:28,995 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:08:28,995 - aiogram.dispatcher - WARNING - Sleep for 5.080363 seconds and try again... (tryings = 21, bot id = 809303024)
+2025-04-04 14:08:34,131 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:08:34,131 - aiogram.dispatcher - WARNING - Sleep for 5.217280 seconds and try again... (tryings = 22, bot id = 809303024)
+2025-04-04 14:08:39,406 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:08:39,406 - aiogram.dispatcher - WARNING - Sleep for 5.121670 seconds and try again... (tryings = 22, bot id = 809303024)
+2025-04-04 14:08:44,584 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:08:44,584 - aiogram.dispatcher - WARNING - Sleep for 4.977886 seconds and try again... (tryings = 23, bot id = 809303024)
+2025-04-04 14:08:49,619 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:08:49,620 - aiogram.dispatcher - WARNING - Sleep for 5.240023 seconds and try again... (tryings = 23, bot id = 809303024)
+2025-04-04 14:08:57,849 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:08:57,849 - aiogram.dispatcher - WARNING - Sleep for 5.111194 seconds and try again... (tryings = 24, bot id = 809303024)
+2025-04-04 14:09:03,019 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:09:03,019 - aiogram.dispatcher - WARNING - Sleep for 4.832599 seconds and try again... (tryings = 24, bot id = 809303024)
+2025-04-04 14:09:07,908 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:09:07,909 - aiogram.dispatcher - WARNING - Sleep for 4.919054 seconds and try again... (tryings = 25, bot id = 809303024)
+2025-04-04 14:09:12,891 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:09:12,891 - aiogram.dispatcher - WARNING - Sleep for 5.077234 seconds and try again... (tryings = 25, bot id = 809303024)
+2025-04-04 14:09:18,024 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:09:18,024 - aiogram.dispatcher - WARNING - Sleep for 4.960698 seconds and try again... (tryings = 26, bot id = 809303024)
+2025-04-04 14:09:23,046 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:09:23,046 - aiogram.dispatcher - WARNING - Sleep for 5.014839 seconds and try again... (tryings = 26, bot id = 809303024)
+2025-04-04 14:09:31,048 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:09:31,048 - aiogram.dispatcher - WARNING - Sleep for 4.871215 seconds and try again... (tryings = 27, bot id = 809303024)
+2025-04-04 14:09:35,977 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:09:35,977 - aiogram.dispatcher - WARNING - Sleep for 5.086289 seconds and try again... (tryings = 27, bot id = 809303024)
+2025-04-04 14:09:41,123 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:09:41,123 - aiogram.dispatcher - WARNING - Sleep for 4.943996 seconds and try again... (tryings = 28, bot id = 809303024)
+2025-04-04 14:09:46,125 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:09:46,126 - aiogram.dispatcher - WARNING - Sleep for 5.031335 seconds and try again... (tryings = 28, bot id = 809303024)
+2025-04-04 14:09:51,217 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:09:51,217 - aiogram.dispatcher - WARNING - Sleep for 5.008532 seconds and try again... (tryings = 29, bot id = 809303024)
+2025-04-04 14:09:56,283 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:09:56,283 - aiogram.dispatcher - WARNING - Sleep for 5.020725 seconds and try again... (tryings = 29, bot id = 809303024)
+2025-04-04 14:09:57,529 - aiogram.dispatcher - INFO - Connection established (tryings = 30, bot id = 809303024)
+2025-04-04 14:09:57,530 - aiogram.event - INFO - Update id=770445467 is not handled. Duration 0 ms by bot id=809303024
+2025-04-04 14:10:01,359 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:10:01,359 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 809303024)
+2025-04-04 14:10:08,100 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:10:08,101 - aiogram.dispatcher - WARNING - Sleep for 5.255363 seconds and try again... (tryings = 30, bot id = 809303024)
+2025-04-04 14:10:13,412 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:10:13,412 - aiogram.dispatcher - WARNING - Sleep for 1.582510 seconds and try again... (tryings = 1, bot id = 809303024)
+2025-04-04 14:10:17,805 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:10:17,805 - aiogram.dispatcher - WARNING - Sleep for 5.126737 seconds and try again... (tryings = 31, bot id = 809303024)
+2025-04-04 14:10:22,986 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:10:22,986 - aiogram.dispatcher - WARNING - Sleep for 2.051689 seconds and try again... (tryings = 2, bot id = 809303024)
+2025-04-04 14:10:27,848 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:10:27,848 - aiogram.dispatcher - WARNING - Sleep for 5.000560 seconds and try again... (tryings = 32, bot id = 809303024)
+2025-04-04 14:10:32,906 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:10:32,907 - aiogram.dispatcher - WARNING - Sleep for 2.811340 seconds and try again... (tryings = 3, bot id = 809303024)
+2025-04-04 14:10:35,776 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:10:35,776 - aiogram.dispatcher - WARNING - Sleep for 4.876407 seconds and try again... (tryings = 33, bot id = 809303024)
+2025-04-04 14:10:43,638 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:10:43,638 - aiogram.dispatcher - WARNING - Sleep for 3.719923 seconds and try again... (tryings = 4, bot id = 809303024)
+2025-04-04 14:10:47,415 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:10:47,416 - aiogram.dispatcher - WARNING - Sleep for 4.994795 seconds and try again... (tryings = 34, bot id = 809303024)
+2025-04-04 14:10:52,466 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:10:52,466 - aiogram.dispatcher - WARNING - Sleep for 4.740379 seconds and try again... (tryings = 5, bot id = 809303024)
+2025-04-04 14:10:57,263 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:10:57,263 - aiogram.dispatcher - WARNING - Sleep for 4.967548 seconds and try again... (tryings = 35, bot id = 809303024)
+2025-04-04 14:11:02,287 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:11:02,287 - aiogram.dispatcher - WARNING - Sleep for 5.007592 seconds and try again... (tryings = 6, bot id = 809303024)
+2025-04-04 14:11:07,352 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:11:07,352 - aiogram.dispatcher - WARNING - Sleep for 4.832655 seconds and try again... (tryings = 36, bot id = 809303024)
+2025-04-04 14:11:15,176 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:11:15,176 - aiogram.dispatcher - WARNING - Sleep for 5.169451 seconds and try again... (tryings = 7, bot id = 809303024)
+2025-04-04 14:11:15,703 - __main__ - INFO - bybit: Final count after OI and cooldown: 505
+2025-04-04 14:11:18,693 - __main__ - WARNING - No openInterest data for BTC/USDT:USDT on binance
+2025-04-04 14:11:19,014 - __main__ - WARNING - No openInterest data for ETH/USDT:USDT on binance
+2025-04-04 14:11:19,336 - __main__ - WARNING - No openInterest data for BCH/USDT:USDT on binance
+2025-04-04 14:11:19,659 - __main__ - WARNING - No openInterest data for XRP/USDT:USDT on binance
+2025-04-04 14:11:19,984 - __main__ - WARNING - No openInterest data for EOS/USDT:USDT on binance
+2025-04-04 14:11:20,306 - __main__ - WARNING - No openInterest data for LTC/USDT:USDT on binance
+2025-04-04 14:11:20,454 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:11:20,454 - aiogram.dispatcher - WARNING - Sleep for 4.858916 seconds and try again... (tryings = 37, bot id = 809303024)
+2025-04-04 14:11:20,626 - __main__ - WARNING - No openInterest data for TRX/USDT:USDT on binance
+2025-04-04 14:11:20,965 - __main__ - WARNING - No openInterest data for ETC/USDT:USDT on binance
+2025-04-04 14:11:21,286 - __main__ - WARNING - No openInterest data for LINK/USDT:USDT on binance
+2025-04-04 14:11:21,606 - __main__ - WARNING - No openInterest data for XLM/USDT:USDT on binance
+2025-04-04 14:11:21,927 - __main__ - WARNING - No openInterest data for ADA/USDT:USDT on binance
+2025-04-04 14:11:22,291 - __main__ - WARNING - No openInterest data for XMR/USDT:USDT on binance
+2025-04-04 14:11:22,614 - __main__ - WARNING - No openInterest data for DASH/USDT:USDT on binance
+2025-04-04 14:11:22,935 - __main__ - WARNING - No openInterest data for ZEC/USDT:USDT on binance
+2025-04-04 14:11:23,255 - __main__ - WARNING - No openInterest data for XTZ/USDT:USDT on binance
+2025-04-04 14:11:23,583 - __main__ - WARNING - No openInterest data for BNB/USDT:USDT on binance
+2025-04-04 14:11:23,907 - __main__ - WARNING - No openInterest data for ATOM/USDT:USDT on binance
+2025-04-04 14:11:24,236 - __main__ - WARNING - No openInterest data for ONT/USDT:USDT on binance
+2025-04-04 14:11:24,561 - __main__ - WARNING - No openInterest data for IOTA/USDT:USDT on binance
+2025-04-04 14:11:24,884 - __main__ - WARNING - No openInterest data for BAT/USDT:USDT on binance
+2025-04-04 14:11:25,207 - __main__ - WARNING - No openInterest data for VET/USDT:USDT on binance
+2025-04-04 14:11:25,376 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:11:25,376 - aiogram.dispatcher - WARNING - Sleep for 4.882679 seconds and try again... (tryings = 8, bot id = 809303024)
+2025-04-04 14:11:25,529 - __main__ - WARNING - No openInterest data for NEO/USDT:USDT on binance
+2025-04-04 14:11:25,852 - __main__ - WARNING - No openInterest data for QTUM/USDT:USDT on binance
+2025-04-04 14:11:26,179 - __main__ - WARNING - No openInterest data for IOST/USDT:USDT on binance
+2025-04-04 14:11:26,499 - __main__ - WARNING - No openInterest data for THETA/USDT:USDT on binance
+2025-04-04 14:11:26,819 - __main__ - WARNING - No openInterest data for ALGO/USDT:USDT on binance
+2025-04-04 14:11:27,141 - __main__ - WARNING - No openInterest data for ZIL/USDT:USDT on binance
+2025-04-04 14:11:27,463 - __main__ - WARNING - No openInterest data for KNC/USDT:USDT on binance
+2025-04-04 14:11:27,783 - __main__ - WARNING - No openInterest data for ZRX/USDT:USDT on binance
+2025-04-04 14:11:28,108 - __main__ - WARNING - No openInterest data for COMP/USDT:USDT on binance
+2025-04-04 14:11:28,431 - __main__ - WARNING - No openInterest data for DOGE/USDT:USDT on binance
+2025-04-04 14:11:28,755 - __main__ - WARNING - No openInterest data for SXP/USDT:USDT on binance
+2025-04-04 14:11:29,079 - __main__ - WARNING - No openInterest data for KAVA/USDT:USDT on binance
+2025-04-04 14:11:29,402 - __main__ - WARNING - No openInterest data for BAND/USDT:USDT on binance
+2025-04-04 14:11:29,724 - __main__ - WARNING - No openInterest data for RLC/USDT:USDT on binance
+2025-04-04 14:11:30,047 - __main__ - WARNING - No openInterest data for MKR/USDT:USDT on binance
+2025-04-04 14:11:30,316 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:11:30,317 - aiogram.dispatcher - WARNING - Sleep for 4.984939 seconds and try again... (tryings = 38, bot id = 809303024)
+2025-04-04 14:11:30,367 - __main__ - WARNING - No openInterest data for SNX/USDT:USDT on binance
+2025-04-04 14:11:30,690 - __main__ - WARNING - No openInterest data for DOT/USDT:USDT on binance
+2025-04-04 14:11:31,018 - __main__ - WARNING - No openInterest data for DEFI/USDT:USDT on binance
+2025-04-04 14:11:31,340 - __main__ - WARNING - No openInterest data for YFI/USDT:USDT on binance
+2025-04-04 14:11:31,660 - __main__ - WARNING - No openInterest data for BAL/USDT:USDT on binance
+2025-04-04 14:11:31,989 - __main__ - WARNING - No openInterest data for CRV/USDT:USDT on binance
+2025-04-04 14:11:32,310 - __main__ - WARNING - No openInterest data for TRB/USDT:USDT on binance
+2025-04-04 14:11:32,631 - __main__ - WARNING - No openInterest data for RUNE/USDT:USDT on binance
+2025-04-04 14:11:32,957 - __main__ - WARNING - No openInterest data for SUSHI/USDT:USDT on binance
+2025-04-04 14:11:33,279 - __main__ - WARNING - No openInterest data for EGLD/USDT:USDT on binance
+2025-04-04 14:11:33,600 - __main__ - WARNING - No openInterest data for SOL/USDT:USDT on binance
+2025-04-04 14:11:33,920 - __main__ - WARNING - No openInterest data for ICX/USDT:USDT on binance
+2025-04-04 14:11:34,248 - __main__ - WARNING - No openInterest data for STORJ/USDT:USDT on binance
+2025-04-04 14:11:34,568 - __main__ - WARNING - No openInterest data for UNI/USDT:USDT on binance
+2025-04-04 14:11:34,895 - __main__ - WARNING - No openInterest data for AVAX/USDT:USDT on binance
+2025-04-04 14:11:35,217 - __main__ - WARNING - No openInterest data for ENJ/USDT:USDT on binance
+2025-04-04 14:11:35,356 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:11:35,357 - aiogram.dispatcher - WARNING - Sleep for 4.786095 seconds and try again... (tryings = 9, bot id = 809303024)
+2025-04-04 14:11:35,557 - __main__ - WARNING - No openInterest data for FLM/USDT:USDT on binance
+2025-04-04 14:11:35,881 - __main__ - WARNING - No openInterest data for KSM/USDT:USDT on binance
+2025-04-04 14:11:36,202 - __main__ - WARNING - No openInterest data for NEAR/USDT:USDT on binance
+2025-04-04 14:11:36,523 - __main__ - WARNING - No openInterest data for AAVE/USDT:USDT on binance
+2025-04-04 14:11:36,845 - __main__ - WARNING - No openInterest data for FIL/USDT:USDT on binance
+2025-04-04 14:11:37,166 - __main__ - WARNING - No openInterest data for RSR/USDT:USDT on binance
+2025-04-04 14:11:37,488 - __main__ - WARNING - No openInterest data for LRC/USDT:USDT on binance
+2025-04-04 14:11:37,808 - __main__ - WARNING - No openInterest data for BEL/USDT:USDT on binance
+2025-04-04 14:11:38,129 - __main__ - WARNING - No openInterest data for AXS/USDT:USDT on binance
+2025-04-04 14:11:38,455 - __main__ - WARNING - No openInterest data for ALPHA/USDT:USDT on binance
+2025-04-04 14:11:38,777 - __main__ - WARNING - No openInterest data for ZEN/USDT:USDT on binance
+2025-04-04 14:11:39,101 - __main__ - WARNING - No openInterest data for SKL/USDT:USDT on binance
+2025-04-04 14:11:39,424 - __main__ - WARNING - No openInterest data for GRT/USDT:USDT on binance
+2025-04-04 14:11:39,745 - __main__ - WARNING - No openInterest data for 1INCH/USDT:USDT on binance
+2025-04-04 14:11:40,070 - __main__ - WARNING - No openInterest data for CHZ/USDT:USDT on binance
+2025-04-04 14:11:40,201 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:11:40,201 - aiogram.dispatcher - WARNING - Sleep for 5.049606 seconds and try again... (tryings = 39, bot id = 809303024)
+2025-04-04 14:11:40,393 - __main__ - WARNING - No openInterest data for SAND/USDT:USDT on binance
+2025-04-04 14:11:40,717 - __main__ - WARNING - No openInterest data for ANKR/USDT:USDT on binance
+2025-04-04 14:11:41,040 - __main__ - WARNING - No openInterest data for RVN/USDT:USDT on binance
+2025-04-04 14:11:41,361 - __main__ - WARNING - No openInterest data for SFP/USDT:USDT on binance
+2025-04-04 14:11:41,686 - __main__ - WARNING - No openInterest data for COTI/USDT:USDT on binance
+2025-04-04 14:11:42,005 - __main__ - WARNING - No openInterest data for CHR/USDT:USDT on binance
+2025-04-04 14:11:42,332 - __main__ - WARNING - No openInterest data for MANA/USDT:USDT on binance
+2025-04-04 14:11:42,653 - __main__ - WARNING - No openInterest data for ALICE/USDT:USDT on binance
+2025-04-04 14:11:42,976 - __main__ - WARNING - No openInterest data for HBAR/USDT:USDT on binance
+2025-04-04 14:11:43,307 - __main__ - WARNING - No openInterest data for ONE/USDT:USDT on binance
+2025-04-04 14:11:43,630 - __main__ - WARNING - No openInterest data for DENT/USDT:USDT on binance
+2025-04-04 14:11:43,952 - __main__ - WARNING - No openInterest data for CELR/USDT:USDT on binance
+2025-04-04 14:11:44,272 - __main__ - WARNING - No openInterest data for HOT/USDT:USDT on binance
+2025-04-04 14:11:44,590 - __main__ - WARNING - No openInterest data for MTL/USDT:USDT on binance
+2025-04-04 14:11:44,911 - __main__ - WARNING - No openInterest data for OGN/USDT:USDT on binance
+2025-04-04 14:11:45,238 - __main__ - WARNING - No openInterest data for NKN/USDT:USDT on binance
+2025-04-04 14:11:45,308 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:11:45,308 - aiogram.dispatcher - WARNING - Sleep for 4.897329 seconds and try again... (tryings = 10, bot id = 809303024)
+2025-04-04 14:11:45,560 - __main__ - WARNING - No openInterest data for 1000SHIB/USDT:USDT on binance
+2025-04-04 14:11:45,881 - __main__ - WARNING - No openInterest data for BAKE/USDT:USDT on binance
+2025-04-04 14:11:46,202 - __main__ - WARNING - No openInterest data for GTC/USDT:USDT on binance
+2025-04-04 14:11:46,523 - __main__ - WARNING - No openInterest data for BTCDOM/USDT:USDT on binance
+2025-04-04 14:11:46,843 - __main__ - WARNING - No openInterest data for IOTX/USDT:USDT on binance
+2025-04-04 14:11:47,164 - __main__ - WARNING - No openInterest data for C98/USDT:USDT on binance
+2025-04-04 14:11:50,419 - __main__ - WARNING - No openInterest data for MASK/USDT:USDT on binance
+2025-04-04 14:11:50,741 - __main__ - WARNING - No openInterest data for ATA/USDT:USDT on binance
+2025-04-04 14:11:51,060 - __main__ - WARNING - No openInterest data for DYDX/USDT:USDT on binance
+2025-04-04 14:11:51,379 - __main__ - WARNING - No openInterest data for 1000XEC/USDT:USDT on binance
+2025-04-04 14:11:51,702 - __main__ - WARNING - No openInterest data for GALA/USDT:USDT on binance
+2025-04-04 14:11:52,027 - __main__ - WARNING - No openInterest data for CELO/USDT:USDT on binance
+2025-04-04 14:11:52,347 - __main__ - WARNING - No openInterest data for AR/USDT:USDT on binance
+2025-04-04 14:11:52,672 - __main__ - WARNING - No openInterest data for ARPA/USDT:USDT on binance
+2025-04-04 14:11:52,992 - __main__ - WARNING - No openInterest data for CTSI/USDT:USDT on binance
+2025-04-04 14:11:53,197 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:11:53,197 - aiogram.dispatcher - WARNING - Sleep for 4.847809 seconds and try again... (tryings = 40, bot id = 809303024)
+2025-04-04 14:11:53,313 - __main__ - WARNING - No openInterest data for LPT/USDT:USDT on binance
+2025-04-04 14:11:53,636 - __main__ - WARNING - No openInterest data for ENS/USDT:USDT on binance
+2025-04-04 14:11:54,005 - __main__ - WARNING - No openInterest data for PEOPLE/USDT:USDT on binance
+2025-04-04 14:11:54,330 - __main__ - WARNING - No openInterest data for ROSE/USDT:USDT on binance
+2025-04-04 14:11:54,662 - __main__ - WARNING - No openInterest data for DUSK/USDT:USDT on binance
+2025-04-04 14:11:54,983 - __main__ - WARNING - No openInterest data for FLOW/USDT:USDT on binance
+2025-04-04 14:11:55,305 - __main__ - WARNING - No openInterest data for IMX/USDT:USDT on binance
+2025-04-04 14:11:55,624 - __main__ - WARNING - No openInterest data for API3/USDT:USDT on binance
+2025-04-04 14:11:55,946 - __main__ - WARNING - No openInterest data for GMT/USDT:USDT on binance
+2025-04-04 14:11:56,267 - __main__ - WARNING - No openInterest data for APE/USDT:USDT on binance
+2025-04-04 14:11:56,587 - __main__ - WARNING - No openInterest data for WOO/USDT:USDT on binance
+2025-04-04 14:11:56,906 - __main__ - WARNING - No openInterest data for JASMY/USDT:USDT on binance
+2025-04-04 14:11:57,225 - __main__ - WARNING - No openInterest data for OP/USDT:USDT on binance
+2025-04-04 14:11:57,546 - __main__ - WARNING - No openInterest data for INJ/USDT:USDT on binance
+2025-04-04 14:11:57,868 - __main__ - WARNING - No openInterest data for STG/USDT:USDT on binance
+2025-04-04 14:11:58,101 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:11:58,101 - aiogram.dispatcher - WARNING - Sleep for 4.948961 seconds and try again... (tryings = 11, bot id = 809303024)
+2025-04-04 14:11:58,192 - __main__ - WARNING - No openInterest data for SPELL/USDT:USDT on binance
+2025-04-04 14:11:58,514 - __main__ - WARNING - No openInterest data for 1000LUNC/USDT:USDT on binance
+2025-04-04 14:11:58,834 - __main__ - WARNING - No openInterest data for LUNA2/USDT:USDT on binance
+2025-04-04 14:11:59,158 - __main__ - WARNING - No openInterest data for LDO/USDT:USDT on binance
+2025-04-04 14:11:59,480 - __main__ - WARNING - No openInterest data for ICP/USDT:USDT on binance
+2025-04-04 14:11:59,801 - __main__ - WARNING - No openInterest data for APT/USDT:USDT on binance
+2025-04-04 14:12:00,123 - __main__ - WARNING - No openInterest data for QNT/USDT:USDT on binance
+2025-04-04 14:12:00,444 - __main__ - WARNING - No openInterest data for FET/USDT:USDT on binance
+2025-04-04 14:12:00,475 - aiogram.dispatcher - INFO - Connection established (tryings = 41, bot id = 809303024)
+2025-04-04 14:12:00,746 - aiogram.event - INFO - Update id=770445468 is handled. Duration 269 ms by bot id=809303024
+2025-04-04 14:12:00,768 - __main__ - WARNING - No openInterest data for FXS/USDT:USDT on binance
+2025-04-04 14:12:01,088 - __main__ - WARNING - No openInterest data for HOOK/USDT:USDT on binance
+2025-04-04 14:12:01,423 - __main__ - WARNING - No openInterest data for MAGIC/USDT:USDT on binance
+2025-04-04 14:12:01,756 - __main__ - WARNING - No openInterest data for T/USDT:USDT on binance
+2025-04-04 14:12:02,083 - __main__ - WARNING - No openInterest data for HIGH/USDT:USDT on binance
+2025-04-04 14:12:02,424 - __main__ - WARNING - No openInterest data for MINA/USDT:USDT on binance
+2025-04-04 14:12:02,779 - __main__ - WARNING - No openInterest data for ASTR/USDT:USDT on binance
+2025-04-04 14:12:03,108 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:12:03,108 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 809303024)
+2025-04-04 14:12:03,241 - __main__ - WARNING - No openInterest data for PHB/USDT:USDT on binance
+2025-04-04 14:12:03,625 - __main__ - WARNING - No openInterest data for GMX/USDT:USDT on binance
+2025-04-04 14:12:04,119 - __main__ - WARNING - No openInterest data for CFX/USDT:USDT on binance
+2025-04-04 14:12:04,445 - __main__ - WARNING - No openInterest data for STX/USDT:USDT on binance
+2025-04-04 14:12:04,765 - __main__ - WARNING - No openInterest data for ACH/USDT:USDT on binance
+2025-04-04 14:12:05,091 - __main__ - WARNING - No openInterest data for SSV/USDT:USDT on binance
+2025-04-04 14:12:05,415 - __main__ - WARNING - No openInterest data for CKB/USDT:USDT on binance
+2025-04-04 14:12:05,736 - __main__ - WARNING - No openInterest data for PERP/USDT:USDT on binance
+2025-04-04 14:12:06,056 - __main__ - WARNING - No openInterest data for TRU/USDT:USDT on binance
+2025-04-04 14:12:06,375 - __main__ - WARNING - No openInterest data for LQTY/USDT:USDT on binance
+2025-04-04 14:12:06,693 - __main__ - WARNING - No openInterest data for USDC/USDT:USDT on binance
+2025-04-04 14:12:06,921 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:12:06,922 - aiogram.dispatcher - WARNING - Sleep for 5.007059 seconds and try again... (tryings = 12, bot id = 809303024)
+2025-04-04 14:12:07,014 - __main__ - WARNING - No openInterest data for ID/USDT:USDT on binance
+2025-04-04 14:12:07,334 - __main__ - WARNING - No openInterest data for ARB/USDT:USDT on binance
+2025-04-04 14:12:07,655 - __main__ - WARNING - No openInterest data for JOE/USDT:USDT on binance
+2025-04-04 14:12:08,079 - __main__ - WARNING - No openInterest data for TLM/USDT:USDT on binance
+2025-04-04 14:12:08,431 - __main__ - WARNING - No openInterest data for LEVER/USDT:USDT on binance
+2025-04-04 14:12:08,758 - __main__ - WARNING - No openInterest data for RDNT/USDT:USDT on binance
+2025-04-04 14:12:09,079 - __main__ - WARNING - No openInterest data for HFT/USDT:USDT on binance
+2025-04-04 14:12:09,401 - __main__ - WARNING - No openInterest data for XVS/USDT:USDT on binance
+2025-04-04 14:12:09,722 - __main__ - WARNING - No openInterest data for BLUR/USDT:USDT on binance
+2025-04-04 14:12:10,050 - __main__ - WARNING - No openInterest data for EDU/USDT:USDT on binance
+2025-04-04 14:12:10,380 - __main__ - WARNING - No openInterest data for SUI/USDT:USDT on binance
+2025-04-04 14:12:10,707 - __main__ - WARNING - No openInterest data for 1000PEPE/USDT:USDT on binance
+2025-04-04 14:12:11,027 - __main__ - WARNING - No openInterest data for 1000FLOKI/USDT:USDT on binance
+2025-04-04 14:12:11,346 - __main__ - WARNING - No openInterest data for UMA/USDT:USDT on binance
+2025-04-04 14:12:11,671 - __main__ - WARNING - No openInterest data for NMR/USDT:USDT on binance
+2025-04-04 14:12:11,987 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:12:11,987 - aiogram.dispatcher - WARNING - Sleep for 1.283407 seconds and try again... (tryings = 1, bot id = 809303024)
+2025-04-04 14:12:11,989 - __main__ - WARNING - No openInterest data for MAV/USDT:USDT on binance
+2025-04-04 14:12:12,317 - __main__ - WARNING - No openInterest data for XVG/USDT:USDT on binance
+2025-04-04 14:12:12,643 - __main__ - WARNING - No openInterest data for WLD/USDT:USDT on binance
+2025-04-04 14:12:12,834 - aiogram.dispatcher - INFO - Connection established (tryings = 13, bot id = 809303024)
+2025-04-04 14:12:12,835 - aiogram.event - INFO - Update id=770445469 is not handled. Duration 0 ms by bot id=809303024
+2025-04-04 14:12:12,964 - __main__ - WARNING - No openInterest data for PENDLE/USDT:USDT on binance
+2025-04-04 14:12:13,286 - __main__ - WARNING - No openInterest data for ARKM/USDT:USDT on binance
+2025-04-04 14:12:13,607 - __main__ - WARNING - No openInterest data for AGLD/USDT:USDT on binance
+2025-04-04 14:12:13,935 - __main__ - WARNING - No openInterest data for YGG/USDT:USDT on binance
+2025-04-04 14:12:14,258 - __main__ - WARNING - No openInterest data for DODOX/USDT:USDT on binance
+2025-04-04 14:12:14,578 - __main__ - WARNING - No openInterest data for BNT/USDT:USDT on binance
+2025-04-04 14:12:14,900 - __main__ - WARNING - No openInterest data for OXT/USDT:USDT on binance
+2025-04-04 14:12:15,219 - __main__ - WARNING - No openInterest data for SEI/USDT:USDT on binance
+2025-04-04 14:12:15,542 - __main__ - WARNING - No openInterest data for CYBER/USDT:USDT on binance
+2025-04-04 14:12:15,866 - __main__ - WARNING - No openInterest data for HIFI/USDT:USDT on binance
+2025-04-04 14:12:16,079 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:12:16,079 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 809303024)
+2025-04-04 14:12:16,190 - __main__ - WARNING - No openInterest data for ARK/USDT:USDT on binance
+2025-04-04 14:12:16,510 - __main__ - WARNING - No openInterest data for BICO/USDT:USDT on binance
+2025-04-04 14:12:16,831 - __main__ - WARNING - No openInterest data for BIGTIME/USDT:USDT on binance
+2025-04-04 14:12:17,139 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:12:17,139 - aiogram.dispatcher - WARNING - Sleep for 1.662604 seconds and try again... (tryings = 2, bot id = 809303024)
+2025-04-04 14:12:17,152 - __main__ - WARNING - No openInterest data for WAXP/USDT:USDT on binance
+2025-04-04 14:12:17,476 - __main__ - WARNING - No openInterest data for BSV/USDT:USDT on binance
+2025-04-04 14:12:17,797 - __main__ - WARNING - No openInterest data for RIF/USDT:USDT on binance
+2025-04-04 14:12:18,118 - __main__ - WARNING - No openInterest data for POLYX/USDT:USDT on binance
+2025-04-04 14:12:18,439 - __main__ - WARNING - No openInterest data for GAS/USDT:USDT on binance
+2025-04-04 14:12:18,763 - __main__ - WARNING - No openInterest data for POWR/USDT:USDT on binance
+2025-04-04 14:12:19,084 - __main__ - WARNING - No openInterest data for TIA/USDT:USDT on binance
+2025-04-04 14:12:19,405 - __main__ - WARNING - No openInterest data for CAKE/USDT:USDT on binance
+2025-04-04 14:12:19,726 - __main__ - WARNING - No openInterest data for MEME/USDT:USDT on binance
+2025-04-04 14:12:20,047 - __main__ - WARNING - No openInterest data for TWT/USDT:USDT on binance
+2025-04-04 14:12:20,374 - __main__ - WARNING - No openInterest data for TOKEN/USDT:USDT on binance
+2025-04-04 14:12:20,694 - __main__ - WARNING - No openInterest data for ORDI/USDT:USDT on binance
+2025-04-04 14:12:21,017 - __main__ - WARNING - No openInterest data for STEEM/USDT:USDT on binance
+2025-04-04 14:12:21,339 - __main__ - WARNING - No openInterest data for BADGER/USDT:USDT on binance
+2025-04-04 14:12:21,608 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:12:21,608 - aiogram.dispatcher - WARNING - Sleep for 1.307158 seconds and try again... (tryings = 1, bot id = 809303024)
+2025-04-04 14:12:21,664 - __main__ - WARNING - No openInterest data for ILV/USDT:USDT on binance
+2025-04-04 14:12:21,991 - __main__ - WARNING - No openInterest data for NTRN/USDT:USDT on binance
+2025-04-04 14:12:22,314 - __main__ - WARNING - No openInterest data for KAS/USDT:USDT on binance
+2025-04-04 14:12:25,560 - __main__ - WARNING - No openInterest data for BEAMX/USDT:USDT on binance
+2025-04-04 14:12:25,880 - __main__ - WARNING - No openInterest data for 1000BONK/USDT:USDT on binance
+2025-04-04 14:12:25,900 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:12:25,900 - aiogram.dispatcher - WARNING - Sleep for 2.081345 seconds and try again... (tryings = 3, bot id = 809303024)
+2025-04-04 14:12:26,203 - __main__ - WARNING - No openInterest data for PYTH/USDT:USDT on binance
+2025-04-04 14:12:26,524 - __main__ - WARNING - No openInterest data for SUPER/USDT:USDT on binance
+2025-04-04 14:12:26,846 - __main__ - WARNING - No openInterest data for USTC/USDT:USDT on binance
+2025-04-04 14:12:27,168 - __main__ - WARNING - No openInterest data for ONG/USDT:USDT on binance
+2025-04-04 14:12:27,489 - __main__ - WARNING - No openInterest data for ETHW/USDT:USDT on binance
+2025-04-04 14:12:27,613 - aiogram.dispatcher - INFO - Connection established (tryings = 2, bot id = 809303024)
+2025-04-04 14:12:27,614 - aiogram.event - INFO - Update id=770445470 is not handled. Duration 0 ms by bot id=809303024
+2025-04-04 14:12:27,813 - __main__ - WARNING - No openInterest data for JTO/USDT:USDT on binance
+2025-04-04 14:12:28,135 - __main__ - WARNING - No openInterest data for 1000SATS/USDT:USDT on binance
+2025-04-04 14:12:28,506 - __main__ - WARNING - No openInterest data for AUCTION/USDT:USDT on binance
+2025-04-04 14:12:28,828 - __main__ - WARNING - No openInterest data for 1000RATS/USDT:USDT on binance
+2025-04-04 14:12:29,150 - __main__ - WARNING - No openInterest data for ACE/USDT:USDT on binance
+2025-04-04 14:12:29,471 - __main__ - WARNING - No openInterest data for MOVR/USDT:USDT on binance
+2025-04-04 14:12:29,812 - __main__ - WARNING - No openInterest data for NFP/USDT:USDT on binance
+2025-04-04 14:12:30,138 - __main__ - WARNING - No openInterest data for AI/USDT:USDT on binance
+2025-04-04 14:12:30,460 - __main__ - WARNING - No openInterest data for XAI/USDT:USDT on binance
+2025-04-04 14:12:30,783 - __main__ - WARNING - No openInterest data for WIF/USDT:USDT on binance
+2025-04-04 14:12:30,788 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:12:30,788 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 809303024)
+2025-04-04 14:12:31,103 - __main__ - WARNING - No openInterest data for MANTA/USDT:USDT on binance
+2025-04-04 14:12:31,427 - __main__ - WARNING - No openInterest data for ONDO/USDT:USDT on binance
+2025-04-04 14:12:31,747 - __main__ - WARNING - No openInterest data for LSK/USDT:USDT on binance
+2025-04-04 14:12:31,847 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:12:31,847 - aiogram.dispatcher - WARNING - Sleep for 2.822507 seconds and try again... (tryings = 4, bot id = 809303024)
+2025-04-04 14:12:32,068 - __main__ - WARNING - No openInterest data for ALT/USDT:USDT on binance
+2025-04-04 14:12:32,393 - __main__ - WARNING - No openInterest data for JUP/USDT:USDT on binance
+2025-04-04 14:12:32,712 - __main__ - WARNING - No openInterest data for ZETA/USDT:USDT on binance
+2025-04-04 14:12:33,033 - __main__ - WARNING - No openInterest data for RONIN/USDT:USDT on binance
+2025-04-04 14:12:33,354 - __main__ - WARNING - No openInterest data for DYM/USDT:USDT on binance
+2025-04-04 14:12:33,676 - __main__ - WARNING - No openInterest data for OM/USDT:USDT on binance
+2025-04-04 14:12:33,997 - __main__ - WARNING - No openInterest data for PIXEL/USDT:USDT on binance
+2025-04-04 14:12:34,318 - __main__ - WARNING - No openInterest data for STRK/USDT:USDT on binance
+2025-04-04 14:12:34,638 - __main__ - WARNING - No openInterest data for GLM/USDT:USDT on binance
+2025-04-04 14:12:34,729 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:12:34,729 - aiogram.dispatcher - WARNING - Sleep for 1.251910 seconds and try again... (tryings = 1, bot id = 809303024)
+2025-04-04 14:12:34,960 - __main__ - WARNING - No openInterest data for PORTAL/USDT:USDT on binance
+2025-04-04 14:12:35,282 - __main__ - WARNING - No openInterest data for TON/USDT:USDT on binance
+2025-04-04 14:12:35,602 - __main__ - WARNING - No openInterest data for AXL/USDT:USDT on binance
+2025-04-04 14:12:35,923 - __main__ - WARNING - No openInterest data for MYRO/USDT:USDT on binance
+2025-04-04 14:12:36,247 - __main__ - WARNING - No openInterest data for METIS/USDT:USDT on binance
+2025-04-04 14:12:36,567 - __main__ - WARNING - No openInterest data for AEVO/USDT:USDT on binance
+2025-04-04 14:12:36,887 - __main__ - WARNING - No openInterest data for VANRY/USDT:USDT on binance
+2025-04-04 14:12:37,206 - __main__ - WARNING - No openInterest data for BOME/USDT:USDT on binance
+2025-04-04 14:12:37,535 - __main__ - WARNING - No openInterest data for ETHFI/USDT:USDT on binance
+2025-04-04 14:12:37,762 - aiogram.dispatcher - INFO - Connection established (tryings = 2, bot id = 809303024)
+2025-04-04 14:12:37,764 - aiogram.event - INFO - Update id=770445471 is not handled. Duration 1 ms by bot id=809303024
+2025-04-04 14:12:37,857 - __main__ - WARNING - No openInterest data for ENA/USDT:USDT on binance
+2025-04-04 14:12:38,179 - __main__ - WARNING - No openInterest data for W/USDT:USDT on binance
+2025-04-04 14:12:38,501 - __main__ - WARNING - No openInterest data for TNSR/USDT:USDT on binance
+2025-04-04 14:12:38,804 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:12:38,804 - aiogram.dispatcher - WARNING - Sleep for 3.761302 seconds and try again... (tryings = 5, bot id = 809303024)
+2025-04-04 14:12:38,820 - __main__ - WARNING - No openInterest data for SAGA/USDT:USDT on binance
+2025-04-04 14:12:39,141 - __main__ - WARNING - No openInterest data for TAO/USDT:USDT on binance
+2025-04-04 14:12:39,462 - __main__ - WARNING - No openInterest data for OMNI/USDT:USDT on binance
+2025-04-04 14:12:39,783 - __main__ - WARNING - No openInterest data for REZ/USDT:USDT on binance
+2025-04-04 14:12:40,106 - __main__ - WARNING - No openInterest data for BB/USDT:USDT on binance
+2025-04-04 14:12:40,427 - __main__ - WARNING - No openInterest data for NOT/USDT:USDT on binance
+2025-04-04 14:12:40,786 - __main__ - WARNING - No openInterest data for TURBO/USDT:USDT on binance
+2025-04-04 14:12:41,110 - __main__ - WARNING - No openInterest data for IO/USDT:USDT on binance
+2025-04-04 14:12:41,432 - __main__ - WARNING - No openInterest data for ZK/USDT:USDT on binance
+2025-04-04 14:12:41,753 - __main__ - WARNING - No openInterest data for MEW/USDT:USDT on binance
+2025-04-04 14:12:42,083 - __main__ - WARNING - No openInterest data for LISTA/USDT:USDT on binance
+2025-04-04 14:12:42,404 - __main__ - WARNING - No openInterest data for ZRO/USDT:USDT on binance
+2025-04-04 14:12:42,621 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:12:42,622 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 809303024)
+2025-04-04 14:12:42,725 - __main__ - WARNING - No openInterest data for RENDER/USDT:USDT on binance
+2025-04-04 14:12:43,047 - __main__ - WARNING - No openInterest data for BANANA/USDT:USDT on binance
+2025-04-04 14:12:43,410 - __main__ - WARNING - No openInterest data for RARE/USDT:USDT on binance
+2025-04-04 14:12:43,732 - __main__ - WARNING - No openInterest data for G/USDT:USDT on binance
+2025-04-04 14:12:44,053 - __main__ - WARNING - No openInterest data for SYN/USDT:USDT on binance
+2025-04-04 14:12:44,377 - __main__ - WARNING - No openInterest data for SYS/USDT:USDT on binance
+2025-04-04 14:12:44,698 - __main__ - WARNING - No openInterest data for VOXEL/USDT:USDT on binance
+2025-04-04 14:12:45,018 - __main__ - WARNING - No openInterest data for BRETT/USDT:USDT on binance
+2025-04-04 14:12:45,340 - __main__ - WARNING - No openInterest data for ALPACA/USDT:USDT on binance
+2025-04-04 14:12:45,661 - __main__ - WARNING - No openInterest data for POPCAT/USDT:USDT on binance
+2025-04-04 14:12:45,983 - __main__ - WARNING - No openInterest data for SUN/USDT:USDT on binance
+2025-04-04 14:12:46,307 - __main__ - WARNING - No openInterest data for VIDT/USDT:USDT on binance
+2025-04-04 14:12:46,434 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:12:46,434 - aiogram.dispatcher - WARNING - Sleep for 4.968625 seconds and try again... (tryings = 6, bot id = 809303024)
+2025-04-04 14:12:46,632 - __main__ - WARNING - No openInterest data for NULS/USDT:USDT on binance
+2025-04-04 14:12:46,955 - __main__ - WARNING - No openInterest data for DOGS/USDT:USDT on binance
+2025-04-04 14:12:47,276 - __main__ - WARNING - No openInterest data for MBOX/USDT:USDT on binance
+2025-04-04 14:12:47,598 - __main__ - WARNING - No openInterest data for CHESS/USDT:USDT on binance
+2025-04-04 14:12:47,925 - __main__ - WARNING - No openInterest data for FLUX/USDT:USDT on binance
+2025-04-04 14:12:48,248 - __main__ - WARNING - No openInterest data for BSW/USDT:USDT on binance
+2025-04-04 14:12:48,571 - __main__ - WARNING - No openInterest data for QUICK/USDT:USDT on binance
+2025-04-04 14:12:48,894 - __main__ - WARNING - No openInterest data for NEIROETH/USDT:USDT on binance
+2025-04-04 14:12:49,217 - __main__ - WARNING - No openInterest data for RPL/USDT:USDT on binance
+2025-04-04 14:12:49,546 - __main__ - WARNING - No openInterest data for POL/USDT:USDT on binance
+2025-04-04 14:12:49,868 - __main__ - WARNING - No openInterest data for UXLINK/USDT:USDT on binance
+2025-04-04 14:12:50,193 - __main__ - WARNING - No openInterest data for 1MBABYDOGE/USDT:USDT on binance
+2025-04-04 14:12:50,515 - __main__ - WARNING - No openInterest data for NEIRO/USDT:USDT on binance
+2025-04-04 14:12:50,840 - __main__ - WARNING - No openInterest data for KDA/USDT:USDT on binance
+2025-04-04 14:12:51,164 - __main__ - WARNING - No openInterest data for FIDA/USDT:USDT on binance
+2025-04-04 14:12:51,459 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:12:51,459 - aiogram.dispatcher - WARNING - Sleep for 1.272555 seconds and try again... (tryings = 1, bot id = 809303024)
+2025-04-04 14:12:51,484 - __main__ - WARNING - No openInterest data for FIO/USDT:USDT on binance
+2025-04-04 14:12:51,804 - __main__ - WARNING - No openInterest data for CATI/USDT:USDT on binance
+2025-04-04 14:12:52,124 - __main__ - WARNING - No openInterest data for GHST/USDT:USDT on binance
+2025-04-04 14:12:52,449 - __main__ - WARNING - No openInterest data for LOKA/USDT:USDT on binance
+2025-04-04 14:12:52,769 - __main__ - WARNING - No openInterest data for HMSTR/USDT:USDT on binance
+2025-04-04 14:12:53,090 - __main__ - WARNING - No openInterest data for REI/USDT:USDT on binance
+2025-04-04 14:12:53,414 - __main__ - WARNING - No openInterest data for COS/USDT:USDT on binance
+2025-04-04 14:12:53,736 - __main__ - WARNING - No openInterest data for EIGEN/USDT:USDT on binance
+2025-04-04 14:12:54,056 - __main__ - WARNING - No openInterest data for DIA/USDT:USDT on binance
+2025-04-04 14:12:54,376 - __main__ - WARNING - No openInterest data for 1000CAT/USDT:USDT on binance
+2025-04-04 14:12:54,697 - __main__ - WARNING - No openInterest data for SCR/USDT:USDT on binance
+2025-04-04 14:12:55,025 - __main__ - WARNING - No openInterest data for GOAT/USDT:USDT on binance
+2025-04-04 14:12:55,346 - __main__ - WARNING - No openInterest data for MOODENG/USDT:USDT on binance
+2025-04-04 14:12:55,544 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:12:55,545 - aiogram.dispatcher - WARNING - Sleep for 4.985973 seconds and try again... (tryings = 7, bot id = 809303024)
+2025-04-04 14:12:55,667 - __main__ - WARNING - No openInterest data for SAFE/USDT:USDT on binance
+2025-04-04 14:12:55,986 - __main__ - WARNING - No openInterest data for SANTOS/USDT:USDT on binance
+2025-04-04 14:12:56,306 - __main__ - WARNING - No openInterest data for TROY/USDT:USDT on binance
+2025-04-04 14:12:56,672 - __main__ - WARNING - No openInterest data for PONKE/USDT:USDT on binance
+2025-04-04 14:12:56,991 - __main__ - WARNING - No openInterest data for COW/USDT:USDT on binance
+2025-04-04 14:12:57,312 - __main__ - WARNING - No openInterest data for CETUS/USDT:USDT on binance
+2025-04-04 14:12:57,629 - __main__ - WARNING - No openInterest data for 1000000MOG/USDT:USDT on binance
+2025-04-04 14:13:00,885 - __main__ - WARNING - No openInterest data for GRASS/USDT:USDT on binance
+2025-04-04 14:13:01,205 - __main__ - WARNING - No openInterest data for DRIFT/USDT:USDT on binance
+2025-04-04 14:13:01,524 - __main__ - WARNING - No openInterest data for SWELL/USDT:USDT on binance
+2025-04-04 14:13:01,902 - __main__ - WARNING - No openInterest data for ACT/USDT:USDT on binance
+2025-04-04 14:13:02,236 - __main__ - WARNING - No openInterest data for PNUT/USDT:USDT on binance
+2025-04-04 14:13:02,398 - aiogram.dispatcher - INFO - Connection established (tryings = 2, bot id = 809303024)
+2025-04-04 14:13:02,399 - aiogram.event - INFO - Update id=770445472 is not handled. Duration 0 ms by bot id=809303024
+2025-04-04 14:13:02,562 - __main__ - WARNING - No openInterest data for HIPPO/USDT:USDT on binance
+2025-04-04 14:13:02,883 - __main__ - WARNING - No openInterest data for 1000X/USDT:USDT on binance
+2025-04-04 14:13:03,205 - __main__ - WARNING - No openInterest data for DEGEN/USDT:USDT on binance
+2025-04-04 14:13:03,524 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:13:03,524 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 809303024)
+2025-04-04 14:13:03,530 - __main__ - WARNING - No openInterest data for BAN/USDT:USDT on binance
+2025-04-04 14:13:03,849 - __main__ - WARNING - No openInterest data for AKT/USDT:USDT on binance
+2025-04-04 14:13:04,173 - __main__ - WARNING - No openInterest data for SLERF/USDT:USDT on binance
+2025-04-04 14:13:04,493 - __main__ - WARNING - No openInterest data for SCRT/USDT:USDT on binance
+2025-04-04 14:13:04,815 - __main__ - WARNING - No openInterest data for 1000CHEEMS/USDT:USDT on binance
+2025-04-04 14:13:05,179 - __main__ - WARNING - No openInterest data for 1000WHY/USDT:USDT on binance
+2025-04-04 14:13:05,510 - __main__ - WARNING - No openInterest data for THE/USDT:USDT on binance
+2025-04-04 14:13:05,834 - __main__ - WARNING - No openInterest data for MORPHO/USDT:USDT on binance
+2025-04-04 14:13:06,154 - __main__ - WARNING - No openInterest data for CHILLGUY/USDT:USDT on binance
+2025-04-04 14:13:06,474 - __main__ - WARNING - No openInterest data for KAIA/USDT:USDT on binance
+2025-04-04 14:13:06,799 - __main__ - WARNING - No openInterest data for AERO/USDT:USDT on binance
+2025-04-04 14:13:07,125 - __main__ - WARNING - No openInterest data for ACX/USDT:USDT on binance
+2025-04-04 14:13:07,330 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:13:07,330 - aiogram.dispatcher - WARNING - Sleep for 5.053798 seconds and try again... (tryings = 8, bot id = 809303024)
+2025-04-04 14:13:07,456 - __main__ - WARNING - No openInterest data for ORCA/USDT:USDT on binance
+2025-04-04 14:13:07,778 - __main__ - WARNING - No openInterest data for MOVE/USDT:USDT on binance
+2025-04-04 14:13:08,100 - __main__ - WARNING - No openInterest data for RAYSOL/USDT:USDT on binance
+2025-04-04 14:13:08,420 - __main__ - WARNING - No openInterest data for KOMA/USDT:USDT on binance
+2025-04-04 14:13:08,743 - __main__ - WARNING - No openInterest data for VIRTUAL/USDT:USDT on binance
+2025-04-04 14:13:09,061 - __main__ - WARNING - No openInterest data for SPX/USDT:USDT on binance
+2025-04-04 14:13:09,385 - __main__ - WARNING - No openInterest data for ME/USDT:USDT on binance
+2025-04-04 14:13:09,707 - __main__ - WARNING - No openInterest data for AVA/USDT:USDT on binance
+2025-04-04 14:13:10,027 - __main__ - WARNING - No openInterest data for DEGO/USDT:USDT on binance
+2025-04-04 14:13:10,349 - __main__ - WARNING - No openInterest data for VELODROME/USDT:USDT on binance
+2025-04-04 14:13:10,669 - __main__ - WARNING - No openInterest data for MOCA/USDT:USDT on binance
+2025-04-04 14:13:10,990 - __main__ - WARNING - No openInterest data for VANA/USDT:USDT on binance
+2025-04-04 14:13:11,313 - __main__ - WARNING - No openInterest data for PENGU/USDT:USDT on binance
+2025-04-04 14:13:11,635 - __main__ - WARNING - No openInterest data for LUMIA/USDT:USDT on binance
+2025-04-04 14:13:11,957 - __main__ - WARNING - No openInterest data for USUAL/USDT:USDT on binance
+2025-04-04 14:13:12,278 - __main__ - WARNING - No openInterest data for AIXBT/USDT:USDT on binance
+2025-04-04 14:13:12,442 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:13:12,442 - aiogram.dispatcher - WARNING - Sleep for 1.341026 seconds and try again... (tryings = 1, bot id = 809303024)
+2025-04-04 14:13:12,598 - __main__ - WARNING - No openInterest data for FARTCOIN/USDT:USDT on binance
+2025-04-04 14:13:12,929 - __main__ - WARNING - No openInterest data for KMNO/USDT:USDT on binance
+2025-04-04 14:13:13,250 - __main__ - WARNING - No openInterest data for CGPT/USDT:USDT on binance
+2025-04-04 14:13:13,572 - __main__ - WARNING - No openInterest data for HIVE/USDT:USDT on binance
+2025-04-04 14:13:13,891 - __main__ - WARNING - No openInterest data for DEXE/USDT:USDT on binance
+2025-04-04 14:13:14,215 - __main__ - WARNING - No openInterest data for PHA/USDT:USDT on binance
+2025-04-04 14:13:14,542 - __main__ - WARNING - No openInterest data for DF/USDT:USDT on binance
+2025-04-04 14:13:14,863 - __main__ - WARNING - No openInterest data for GRIFFAIN/USDT:USDT on binance
+2025-04-04 14:13:15,183 - __main__ - WARNING - No openInterest data for AI16Z/USDT:USDT on binance
+2025-04-04 14:13:15,509 - __main__ - WARNING - No openInterest data for ZEREBRO/USDT:USDT on binance
+2025-04-04 14:13:15,829 - __main__ - WARNING - No openInterest data for BIO/USDT:USDT on binance
+2025-04-04 14:13:16,153 - __main__ - WARNING - No openInterest data for COOKIE/USDT:USDT on binance
+2025-04-04 14:13:16,474 - __main__ - WARNING - No openInterest data for ALCH/USDT:USDT on binance
+2025-04-04 14:13:16,595 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:13:16,595 - aiogram.dispatcher - WARNING - Sleep for 4.989808 seconds and try again... (tryings = 9, bot id = 809303024)
+2025-04-04 14:13:16,796 - __main__ - WARNING - No openInterest data for SWARMS/USDT:USDT on binance
+2025-04-04 14:13:17,117 - __main__ - WARNING - No openInterest data for SONIC/USDT:USDT on binance
+2025-04-04 14:13:17,434 - __main__ - WARNING - No openInterest data for D/USDT:USDT on binance
+2025-04-04 14:13:17,754 - __main__ - WARNING - No openInterest data for PROM/USDT:USDT on binance
+2025-04-04 14:13:18,074 - __main__ - WARNING - No openInterest data for S/USDT:USDT on binance
+2025-04-04 14:13:18,397 - __main__ - WARNING - No openInterest data for SOLV/USDT:USDT on binance
+2025-04-04 14:13:18,717 - __main__ - WARNING - No openInterest data for ARC/USDT:USDT on binance
+2025-04-04 14:13:19,041 - __main__ - WARNING - No openInterest data for AVAAI/USDT:USDT on binance
+2025-04-04 14:13:19,361 - __main__ - WARNING - No openInterest data for TRUMP/USDT:USDT on binance
+2025-04-04 14:13:19,684 - __main__ - WARNING - No openInterest data for MELANIA/USDT:USDT on binance
+2025-04-04 14:13:20,006 - __main__ - WARNING - No openInterest data for VTHO/USDT:USDT on binance
+2025-04-04 14:13:20,325 - __main__ - WARNING - No openInterest data for ANIME/USDT:USDT on binance
+2025-04-04 14:13:20,647 - __main__ - WARNING - No openInterest data for VINE/USDT:USDT on binance
+2025-04-04 14:13:20,969 - __main__ - WARNING - No openInterest data for PIPPIN/USDT:USDT on binance
+2025-04-04 14:13:21,334 - __main__ - WARNING - No openInterest data for VVV/USDT:USDT on binance
+2025-04-04 14:13:21,640 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:13:21,640 - aiogram.dispatcher - WARNING - Sleep for 1.677997 seconds and try again... (tryings = 2, bot id = 809303024)
+2025-04-04 14:13:21,653 - __main__ - WARNING - No openInterest data for BERA/USDT:USDT on binance
+2025-04-04 14:13:21,977 - __main__ - WARNING - No openInterest data for TST/USDT:USDT on binance
+2025-04-04 14:13:22,299 - __main__ - WARNING - No openInterest data for LAYER/USDT:USDT on binance
+2025-04-04 14:13:22,619 - __main__ - WARNING - No openInterest data for HEI/USDT:USDT on binance
+2025-04-04 14:13:22,942 - __main__ - WARNING - No openInterest data for B3/USDT:USDT on binance
+2025-04-04 14:13:23,264 - __main__ - WARNING - No openInterest data for IP/USDT:USDT on binance
+2025-04-04 14:13:23,586 - __main__ - WARNING - No openInterest data for GPS/USDT:USDT on binance
+2025-04-04 14:13:23,907 - __main__ - WARNING - No openInterest data for SHELL/USDT:USDT on binance
+2025-04-04 14:13:24,229 - __main__ - WARNING - No openInterest data for KAITO/USDT:USDT on binance
+2025-04-04 14:13:24,548 - __main__ - WARNING - No openInterest data for RED/USDT:USDT on binance
+2025-04-04 14:13:24,868 - __main__ - WARNING - No openInterest data for VIC/USDT:USDT on binance
+2025-04-04 14:13:25,187 - __main__ - WARNING - No openInterest data for EPIC/USDT:USDT on binance
+2025-04-04 14:13:25,508 - __main__ - WARNING - No openInterest data for BMT/USDT:USDT on binance
+2025-04-04 14:13:25,828 - __main__ - WARNING - No openInterest data for MUBARAK/USDT:USDT on binance
+2025-04-04 14:13:26,127 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-04 14:13:26,127 - aiogram.dispatcher - WARNING - Sleep for 4.912623 seconds and try again... (tryings = 10, bot id = 809303024)
+2025-04-04 14:13:26,149 - __main__ - WARNING - No openInterest data for FORM/USDT:USDT on binance
