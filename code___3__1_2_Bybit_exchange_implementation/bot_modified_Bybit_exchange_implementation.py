@@ -184,13 +184,6 @@ async def fetch_pairs_and_prices(exchange, exchange_name):
     markets = await exchange.load_markets()
     logger.info(f"{exchange_name}: Loaded {len(markets)} markets")
     
-    # Все контракты с quote=USDT для сравнения
-    usdt_contracts = {
-        symbol: market for symbol, market in markets.items()
-        if market.get('quote') == 'USDT' and market.get('contract') is True
-    }
-
-    # Основной фильтр для USDT perpetual futures
     usdt_perpetual = {
         symbol: market for symbol, market in markets.items()
         if (
@@ -198,33 +191,11 @@ async def fetch_pairs_and_prices(exchange, exchange_name):
             market.get('contract') is True and
             market.get('option') is False and
             market.get('expiry') is None and
-            market.get('linear') is True and
-            market.get('info', {}).get('contractType') == 'PERPETUAL'
+            market.get('linear') is True
         )
     }
     logger.info(f"{exchange_name}: Filtered {len(usdt_perpetual)} USDT perpetual pairs")
     
-    # Исключённые пары (те, что есть в usdt_contracts, но не прошли фильтр)
-    excluded_pairs = {
-        symbol: market for symbol, market in usdt_contracts.items()
-        if symbol not in usdt_perpetual
-    }
-    if excluded_pairs:
-        logger.warning(
-            f"{exchange_name}: *** EXCLUDED *** {len(excluded_pairs)} pairs not matching perpetual filter: "
-            f"{list(excluded_pairs.keys())[:10]}"
-            f"{'' if len(excluded_pairs) <= 10 else ' ... (and more)'}"
-        )
-        # Дополнительно логируем причину исключения для первых 5 пар
-        for symbol, market in list(excluded_pairs.items())[:5]:
-            logger.warning(
-                f"{exchange_name}: *** EXCLUDED *** {symbol} - "
-                f"option: {market.get('option')}, "
-                f"expiry: {market.get('expiry')}, "
-                f"linear: {market.get('linear')}, "
-                f"contractType: {market.get('info', {}).get('contractType')}"
-            )
-
     # Убираем нормализацию для Binance, оставляем символы как есть
     normalized_symbols = list(usdt_perpetual.keys())
     logger.info(f"{exchange_name}: Symbols: {len(normalized_symbols)} (first 5: {normalized_symbols[:5]})")
@@ -232,6 +203,12 @@ async def fetch_pairs_and_prices(exchange, exchange_name):
     tickers = await exchange.fetch_tickers(normalized_symbols)
     logger.info(f"{exchange_name}: Fetched {len(tickers)} tickers")
     
+    # Логируем структуру первого тикера для проверки
+    if tickers:
+        first_symbol = next(iter(tickers))
+        logger.info(f"{exchange_name}: Ticker sample for {first_symbol}: {tickers[first_symbol]}")
+    
+    # Используем 'last' для обеих бирж, так как оно работает с правильными символами
     result = {symbol: tickers.get(symbol, {}).get('last') for symbol in normalized_symbols if tickers.get(symbol, {}).get('last') is not None}
     logger.info(f"{exchange_name}: Final pairs with prices: {len(result)}")
     
